@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Проекты</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__top-inner">
+            <a href="./index.html" class="logo">
+              <img src="images/logo.svg" alt="ГЕОС" />
+            </a>
+
+            <nav class="menu">
+              <ul class="menu__list">
+                <li>
+                  <a href="about_compony.html" class="menu__link">О нас</a>
+                </li>
+                <li><a href="services.html" class="menu__link">Услуги</a></li>
+                <li>
+                  <a href="licenses_documentation.html" class="menu__link"
+                    >Лицензии</a
+                  >
+                </li>
+                <li><a href="projects.html" class="menu__link">Проекты</a></li>
+                <li><a href="#" class="menu__link">Этапы</a></li>
+                <li><a href="#" class="menu__link">Заказчики</a></li>
+                <li>
+                  <a href="our_contacts.html" class="menu__link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+
+            <button class="burger-btn" aria-label="Открыть меню">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu">
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li>
+            <a href="about_compony.html" class="mobile-menu__link">О нас</a>
+          </li>
+          <li>
+            <a href="services.html" class="mobile-menu__link">Услуги</a>
+          </li>
+          <li>
+            <a href="licenses_documentation.html" class="mobile-menu__link"
+              >Лицензии</a
+            >
+          </li>
+          <li>
+            <a href="projects.html" class="mobile-menu__link">Проекты</a>
+          </li>
+          <li><a href="#" class="mobile-menu__link">Этапы</a></li>
+          <li><a href="#" class="mobile-menu__link">Заказчики</a></li>
+          <li>
+            <a href="our_contacts.html" class="mobile-menu__link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <div class="container">
+        <p class="title">Проекты</p>
+        <div class="about__projects__block">
+          <p class="text__about__projects"></p>
+          <img src="./images/doc-img.svg" alt="" class="image__projects" />
+        </div>
+        <div class="projects-carousel-wrapper">
+          <button
+            class="carousel-arrow carousel-arrow--prev"
+            aria-label="Предыдущий проект"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          <div class="projects-carousel">
+            <div class="project-card active">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/Рыбинская_ГЭС.jpg"
+                  alt="Рыбинская ГЭС"
+                  class="project-card__image"
+                />
+                <span class="project-card__year">2008</span>
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    Разработка проекта автоматизации КИА Рыбинской ГЭС
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/Рыбинская_ГЭС.jpg"
+                  alt="Проект"
+                  class="project-card__image"
+                />
+                <span class="project-card__year">2009</span>
+              </div>
+              <div class="project-card__overlay">
+                <p class="project-card__text">
+                  Модернизация системы мониторинга ГЭС
+                </p>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/Рыбинская_ГЭС.jpg"
+                  alt="Проект"
+                  class="project-card__image"
+                />
+                <span class="project-card__year">2010</span>
+              </div>
+              <div class="project-card__overlay">
+                <p class="project-card__text">
+                  Внедрение ИДС БИНГ на гидроэлектростанции
+                </p>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/Рыбинская_ГЭС.jpg"
+                  alt="Проект"
+                  class="project-card__image"
+                />
+                <span class="project-card__year">2011</span>
+              </div>
+              <div class="project-card__overlay">
+                <p class="project-card__text">
+                  Автоматизация контроля состояния сооружений
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-arrow carousel-arrow--next"
+            aria-label="Следующий проект"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Индикаторы -->
+        <div class="carousel-dots"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <img src="./images/logo.svg" alt="" class="footer__image" />
+      <div class="container__about__us">
+        <p class="about__us__title">О нас</p>
+        <ul class="about__us__menu">
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">История</a>
+          </li>
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">Документация</a>
+          </li>
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">Партнеры</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container__clients">
+        <p class="clients__title">Клиентам</p>
+        <ul class="clients__menu">
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Услуги</a>
+          </li>
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Проекты</a>
+          </li>
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Процесс</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container__contacts">
+        <p class="contacts__title">Контакты</p>
+        <ul class="contacts__menu">
+          <li class="contacts__menu__item">тел. +7(977)518-20-26</li>
+          <li class="contacts__menu__item">
+            <a href="#" class="menu__link__item"
+              >Электронная почта geos@nppgeos.ru</a
+            >
+          </li>
+          <li class="contacts__menu__item">
+            <a href="#" class="menu__link__item"
+              >Адрес 127083, г. Москва, вн.тер.г. муниципальный округ Аэропорт,
+              ул. 8 Марта, д. 1, стр. 12, помещ. 11/20</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      // Бургер меню
+      const burgerBtn = document.querySelector(".burger-btn");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const body = document.body;
+
+      // Создаем оверлей
+      const overlay = document.createElement("div");
+      overlay.className = "mobile-menu-overlay";
+      document.body.appendChild(overlay);
+
+      // Функция закрытия меню
+      function closeMenu() {
+        burgerBtn.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        overlay.classList.remove("active");
+        body.classList.remove("menu-open");
+      }
+
+      // Функция открытия меню
+      function openMenu() {
+        burgerBtn.classList.add("active");
+        mobileMenu.classList.add("active");
+        overlay.classList.add("active");
+        body.classList.add("menu-open");
+      }
+
+      // Открытие/закрытие меню по клику на бургер
+      burgerBtn.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("active")) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      // Закрытие по клику на оверлей
+      overlay.addEventListener("click", closeMenu);
+
+      // Закрытие по клику на пункт меню (с небольшим таймаутом, чтобы ссылка успела сработать)
+      const mobileLinks = document.querySelectorAll(".mobile-menu__link");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+
+          // Если это якорная ссылка (#) — предотвращаем переход, только закрываем
+          if (href === "#" || href === "") {
+            e.preventDefault();
+            closeMenu();
+            return;
+          }
+
+          // Для обычных ссылок (about_compony.html и т.д.) — закрываем меню с задержкой
+          // чтобы браузер успел инициировать переход
+          setTimeout(closeMenu, 100);
+        });
+      });
+
+      // Закрытие по Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+          closeMenu();
+        }
+      });
+
+      // Закрытие при ресайзе экрана (если меню было открыто на мобильном и перешли на десктоп)
+      window.addEventListener("resize", () => {
+        if (
+          window.innerWidth > 992 &&
+          mobileMenu.classList.contains("active")
+        ) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".projects-carousel");
+        const cards = document.querySelectorAll(".project-card");
+        const prevBtn = document.querySelector(".carousel-arrow--prev");
+        const nextBtn = document.querySelector(".carousel-arrow--next");
+        const dotsContainer = document.querySelector(".carousel-dots");
+
+        let currentIndex = 0;
+        const totalCards = cards.length;
+        let autoPlayInterval;
+        const autoPlayDelay = 5000; // 5 секунд
+
+        // Создаем индикаторы (точки)
+        cards.forEach((_, index) => {
+          const dot = document.createElement("button");
+          dot.classList.add("carousel-dot");
+          if (index === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => goToSlide(index));
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".carousel-dot");
+
+        function updateCarousel() {
+          // Убираем active у всех карточек и точек
+          cards.forEach((card) => card.classList.remove("active"));
+          dots.forEach((dot) => dot.classList.remove("active"));
+
+          // Добавляем active текущей карточке и точке
+          cards[currentIndex].classList.add("active");
+          dots[currentIndex].classList.add("active");
+        }
+
+        function goToSlide(index) {
+          currentIndex = index;
+          updateCarousel();
+          resetAutoPlay();
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalCards;
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+          updateCarousel();
+        }
+
+        function startAutoPlay() {
+          autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+        }
+
+        function stopAutoPlay() {
+          clearInterval(autoPlayInterval);
+        }
+
+        function resetAutoPlay() {
+          stopAutoPlay();
+          startAutoPlay();
+        }
+
+        // Обработчики событий
+        nextBtn.addEventListener("click", () => {
+          nextSlide();
+          resetAutoPlay();
+        });
+
+        prevBtn.addEventListener("click", () => {
+          prevSlide();
+          resetAutoPlay();
+        });
+
+        // Пауза при наведении
+        carousel.addEventListener("mouseenter", stopAutoPlay);
+        carousel.addEventListener("mouseleave", startAutoPlay);
+
+        // Запуск автоплея
+        startAutoPlay();
+      });
+    </script>
+  </body>
+</html>

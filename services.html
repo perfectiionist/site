@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Услуги</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/services.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__top-inner">
+            <a href="./index.html" class="logo">
+              <img src="images/logo.svg" alt="ГЕОС" />
+            </a>
+
+            <nav class="menu">
+              <ul class="menu__list">
+                <li>
+                  <a href="about_compony.html" class="menu__link">О нас</a>
+                </li>
+                <li><a href="services.html" class="menu__link">Услуги</a></li>
+                <li>
+                  <a href="licenses_documentation.html" class="menu__link"
+                    >Лицензии</a
+                  >
+                </li>
+                <li><a href="projects.html" class="menu__link">Проекты</a></li>
+                <li><a href="#" class="menu__link">Этапы</a></li>
+                <li><a href="#" class="menu__link">Заказчики</a></li>
+                <li>
+                  <a href="our_contacts.html" class="menu__link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+
+            <button class="burger-btn" aria-label="Открыть меню">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu">
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li>
+            <a href="about_compony.html" class="mobile-menu__link">О нас</a>
+          </li>
+          <li>
+            <a href="services.html" class="mobile-menu__link">Услуги</a>
+          </li>
+          <li>
+            <a href="licenses_documentation.html" class="mobile-menu__link"
+              >Лицензии</a
+            >
+          </li>
+          <li>
+            <a href="projects.html" class="mobile-menu__link">Проекты</a>
+          </li>
+          <li><a href="#" class="mobile-menu__link">Этапы</a></li>
+          <li><a href="#" class="mobile-menu__link">Заказчики</a></li>
+          <li>
+            <a href="our_contacts.html" class="mobile-menu__link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <div class="container">
+        <div class="block__title">
+          <h1 class="first__title__services">Услуги</h1>
+          <p class="second__title__services">ИДС БИНГ</p>
+        </div>
+        <div class="about__bing">
+          <div class="about__bing__text">
+            <p class="title__about__bing">ИДС БИНГ</p>
+            <p class="text__about__bing">
+              Информационно-диагностическая система «БИНГ» представляет собой
+              web-приложение для автоматизации процессов мониторинга ГТС с
+              использованием электронных журналов и автоматической оперативной
+              диагностики. Удобный и интуитивно понятный интерфейс позволяет
+              пользователю производить анализ данных, используя встроенные в
+              функции построения таблиц, графиков, эпюр, а также цветовую
+              индикацию на 3D-модели и схемах.
+            </p>
+          </div>
+          <div class="about__bing__image-wrapper">
+            <img
+              src="./images/services-img.jpg"
+              alt="ИДС БИНГ"
+              class="about__bing__image"
+            />
+          </div>
+        </div>
+        <div class="characteristics__block">
+          <p class="title__characteristics__block">
+            Функциональные характеристики ИДС «БИНГ 5.0»
+          </p>
+          <p class="text__characteristics__block">
+            ИДС БИНГ предназначена для обеспечения контроля безопасности
+            эксплуатируемых гидротехнических или промышленных сооружений с
+            использованием контрольно-измерительной аппаратуры (КИА) и
+            результатов визуальных наблюдений.
+          </p>
+          <br />
+          <p class="text__characteristics__block">ИДС БИНГ-5 обеспечивает:</p>
+          <div class="features__grid">
+            <div class="feature__card">
+              <span class="feature__number">01</span>
+              <p class="feature__text">
+                Ввод, хранение и обработку данных наблюдений (автоматизированные
+                и ручные) по КИА, а также результатов визуальных наблюдений
+              </p>
+            </div>
+
+            <div class="feature__card">
+              <span class="feature__number">02</span>
+              <p class="feature__text">
+                Визуализацию результатов наблюдений в виде графиков, эпюр,
+                трёхмерных топограмм
+              </p>
+            </div>
+
+            <div class="feature__card">
+              <span class="feature__number">03</span>
+              <p class="feature__text">
+                Статистическую обработку данных наблюдений с построением
+                прогнозных моделей
+              </p>
+            </div>
+
+            <div class="feature__card">
+              <span class="feature__number">04</span>
+              <p class="feature__text">
+                Диагностику состояния сооружения с выдачей рекомендации при
+                выявлении деструктивных процессов
+              </p>
+            </div>
+
+            <div class="feature__card">
+              <span class="feature__number">05</span>
+              <p class="feature__text">
+                Мгновенную систему оперативного оповещения о возникновении
+                нештатных ситуаций
+              </p>
+            </div>
+
+            <div class="feature__card">
+              <span class="feature__number">06</span>
+              <p class="feature__text">
+                Работу с двухмерными чертежами и трехмерными моделями сооружений
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="documentation__block">
+          <p class="title__about__bing">Эксплуатационная документация</p>
+          <p class="documentation__image__block">
+            <img
+              src="./images/documentation-image.svg"
+              alt=""
+              class="documentation__image"
+            />
+            <img src="./images/doc-img.svg" alt="" class="" />
+          </p>
+        </div>
+        <p class="title__about__bing">Карта использования</p>
+        <div class="map__wrapper">
+          <div id="map">
+            <div class="info__panel" id="infoPanel">
+              Всего организаций: <span id="totalCount">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="copyright__block">
+          <p class="title__about__bing">Авторские права</p>
+          <img src="./images/doc-img.svg" alt="" class="" />
+        </div>
+      </div>
+      <!-- Секция консультации ВЫНОСИТСЯ за пределы container -->
+      <section class="consultation__section">
+        <div class="consultation__top">
+          <div class="container">
+            <div class="consultation__wrapper">
+              <div class="consultation__title__block">
+                <h2 class="consultation__title">
+                  Получите бесплатную консультацию
+                </h2>
+              </div>
+
+              <form class="consultation__form" action="#" method="POST">
+                <div class="form__group">
+                  <label for="name" class="form__label"
+                    >Имя <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form__input"
+                    required
+                  />
+                </div>
+
+                <div class="form__group">
+                  <label for="work__type" class="form__label"
+                    >Виды работ <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="work__type"
+                    name="work__type"
+                    class="form__input"
+                    required
+                  />
+                </div>
+
+                <div class="form__group">
+                  <label for="object" class="form__label"
+                    >Объект <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="object"
+                    name="object"
+                    class="form__input"
+                    required
+                  />
+                </div>
+
+                <div class="form__group">
+                  <label for="phone" class="form__label"
+                    >Номер телефона <span class="required">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form__input"
+                    required
+                  />
+                </div>
+
+                <div class="form__group form__checkbox__group">
+                  <label class="checkbox__label">
+                    <input
+                      type="checkbox"
+                      name="consent"
+                      class="form__checkbox"
+                      required
+                    />
+                    <span class="checkbox__text">
+                      Согласие на обработку персональных данных
+                      <span class="required">*</span>
+                    </span>
+                  </label>
+                  <p class="checkbox__description">
+                    Да, я согласен с использованием ООО НПП ГЕОС моих
+                    персональных данных для обработки данного обращения
+                  </p>
+                </div>
+
+                <button type="submit" class="consultation__btn">
+                  Получить консультацию
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <img src="./images/logo.svg" alt="" class="footer__image" />
+      <div class="container__about__us">
+        <p class="about__us__title">О нас</p>
+        <ul class="about__us__menu">
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">История</a>
+          </li>
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">Документация</a>
+          </li>
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">Партнеры</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container__clients">
+        <p class="clients__title">Клиентам</p>
+        <ul class="clients__menu">
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Услуги</a>
+          </li>
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Проекты</a>
+          </li>
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Процесс</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container__contacts">
+        <p class="contacts__title">Контакты</p>
+        <ul class="contacts__menu">
+          <li class="contacts__menu__item">тел. +7(977)518-20-26</li>
+          <li class="contacts__menu__item">
+            <a href="#" class="menu__link__item"
+              >Электронная почта geos@nppgeos.ru</a
+            >
+          </li>
+          <li class="contacts__menu__item">
+            <a href="#" class="menu__link__item"
+              >Адрес 127083, г. Москва, вн.тер.г. муниципальный округ Аэропорт,
+              ул. 8 Марта, д. 1, стр. 12, помещ. 11/20</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./js/data_services.js"></script>
+    <script src="./js/services_script.js"></script>
+
+    <script>
+      // Бургер меню
+      const burgerBtn = document.querySelector(".burger-btn");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const body = document.body;
+
+      // Создаем оверлей
+      const overlay = document.createElement("div");
+      overlay.className = "mobile-menu-overlay";
+      document.body.appendChild(overlay);
+
+      // Функция закрытия меню
+      function closeMenu() {
+        burgerBtn.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        overlay.classList.remove("active");
+        body.classList.remove("menu-open");
+      }
+
+      // Функция открытия меню
+      function openMenu() {
+        burgerBtn.classList.add("active");
+        mobileMenu.classList.add("active");
+        overlay.classList.add("active");
+        body.classList.add("menu-open");
+      }
+
+      // Открытие/закрытие меню по клику на бургер
+      burgerBtn.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("active")) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      // Закрытие по клику на оверлей
+      overlay.addEventListener("click", closeMenu);
+
+      // Закрытие по клику на пункт меню (с небольшим таймаутом, чтобы ссылка успела сработать)
+      const mobileLinks = document.querySelectorAll(".mobile-menu__link");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+
+          // Если это якорная ссылка (#) — предотвращаем переход, только закрываем
+          if (href === "#" || href === "") {
+            e.preventDefault();
+            closeMenu();
+            return;
+          }
+
+          // Для обычных ссылок (about_compony.html и т.д.) — закрываем меню с задержкой
+          // чтобы браузер успел инициировать переход
+          setTimeout(closeMenu, 100);
+        });
+      });
+
+      // Закрытие по Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+          closeMenu();
+        }
+      });
+
+      // Закрытие при ресайзе экрана (если меню было открыто на мобильном и перешли на десктоп)
+      window.addEventListener("resize", () => {
+        if (
+          window.innerWidth > 992 &&
+          mobileMenu.classList.contains("active")
+        ) {
+          closeMenu();
+        }
+      });
+    </script>
+  </body>
+</html>
