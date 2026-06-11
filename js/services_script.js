@@ -38,7 +38,7 @@ const resetControl = L.control({ position: "topright" });
 
 resetControl.onAdd = function () {
   const div = L.DomUtil.create("div", "leaflet-bar leaflet-control");
-  div.innerHTML = `<img class="btn-reset-zoom" src="../images/reset.png" style="width: 30px; height: 30px; cursor: pointer;"/>`;
+  div.innerHTML = `<img class="btn-reset-zoom" src="./images/reset.png" style="width: 30px; height: 30px; cursor: pointer;"/>`;
 
   div.onclick = function (e) {
     e.preventDefault();
@@ -55,14 +55,14 @@ const yandexLogo = L.control({ position: "bottomright" });
 yandexLogo.onAdd = function () {
   const div = L.DomUtil.create("div");
   div.innerHTML =
-    '<a href="https://yandex.ru/maps" target="_blank"><img src="../images/yndex_logo_ru.png" alt="Яндекс Карты" style="height: 40px;"></a>';
+    '<a href="https://yandex.ru/maps" target="_blank"><img src="./images/yndex_logo_ru.png" alt="Яндекс Карты" style="height: 40px;"></a>';
   return div;
 };
 yandexLogo.addTo(map);
 
 // Кастомная иконка
 const customIcon = L.icon({
-  iconUrl: "../images/hydro-pin.png",
+  iconUrl: "./images/hydro-pin.png",
   iconSize: [32, 32],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32],
