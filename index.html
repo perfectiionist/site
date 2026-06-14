@@ -7,12 +7,9 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
   </head>
   <body>
@@ -21,7 +18,11 @@
         <div class="container">
           <div class="header__top-inner">
             <a href="#" class="logo">
-              <img src="images/logo.svg" alt="ГЕОС" />
+              <img src="images/logo.png" alt="ГЕОС" />
+              <div class="logo__text">
+                <p class="text__npp">ООО НПП</p>
+                <p class="text__geos">ГЕОС</p>
+              </div>
             </a>
 
             <nav class="menu">
@@ -37,12 +38,44 @@
                 </li>
                 <li><a href="projects.html" class="menu__link">Проекты</a></li>
                 <li><a href="#" class="menu__link">Этапы</a></li>
-                <li><a href="#" class="menu__link">Заказчики</a></li>
+                <li>
+                  <a href="customers.html" class="menu__link">Заказчики</a>
+                </li>
                 <li>
                   <a href="our_contacts.html" class="menu__link">Контакты</a>
                 </li>
               </ul>
             </nav>
+
+            <!-- Внутри <div class="header__top-inner"> -->
+            <!-- <button
+              id="theme-toggle"
+              class="theme-toggle-btn"
+              aria-label="Переключить тему"
+            >
+            
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button> -->
 
             <button class="burger-btn" aria-label="Открыть меню">
               <span class="burger-line"></span>
@@ -95,7 +128,9 @@
             <a href="projects.html" class="mobile-menu__link">Проекты</a>
           </li>
           <li><a href="#" class="mobile-menu__link">Этапы</a></li>
-          <li><a href="#" class="mobile-menu__link">Заказчики</a></li>
+          <li>
+            <a href="customers.html" class="mobile-menu__link">Заказчики</a>
+          </li>
           <li>
             <a href="our_contacts.html" class="mobile-menu__link">Контакты</a>
           </li>
@@ -108,12 +143,12 @@
         <div class="about__info">
           <div class="about__info__card">
             <img src="./images/time.svg" alt="" />
-            <p class="about__info__card__text">30 лет на рынке</p>
+            <p class="about__info__card__text">35 лет на рынке</p>
           </div>
           <div class="about__info__card">
             <img src="./images/project.svg" alt="" />
             <p class="about__info__card__text">
-              Более 200 реализованных проектов
+              Более 600 реализованных проектов
             </p>
           </div>
           <div class="about__info__card">
@@ -122,7 +157,9 @@
               alt=""
               class="about__info__card__img__staffs"
             />
-            <p class="about__info__card__text__staffs">Более 50 сотрудников</p>
+            <p class="about__info__card__text__staffs">
+              Более 50 сотрудников и экспертов
+            </p>
           </div>
         </div>
         <div class="compony__history">
@@ -132,7 +169,7 @@
             1991 года
           </p>
           <p class="second__paragraph">
-            ООО НПП «ГЕОС» - компания более 30 лет работает в сфере обеспечения
+            ООО НПП «ГЕОС» - компания более 35 лет работает в сфере обеспечения
             комплексно безопасности гидротехнических сооружений С момента
             основания в 1991 году наша компания успешно реализовала более 600
             проектов для:
@@ -190,14 +227,37 @@
           <img src="./images/main-image.jpg" alt="" class="main__image" />
 
           <h2 class="compony__geography__title">Географическое присутствие</h2>
+          <div class="map__wrapper">
+            <div id="map">
+              <div class="info__panel" id="infoPanel">
+                Всего организаций: <span id="totalCount">0</span>
+              </div>
+            </div>
+          </div>
           <h2 class="compony__licenses__title">Лицензии</h2>
           <div class="container__licenses">
-            <img src="./images/licenses.jpg" alt="" class="licenses__card" />
-            <img src="./images/licenses.jpg" alt="" class="licenses__card" />
-            <img src="./images/licenses.jpg" alt="" class="licenses__card" />
+            <div class="document__card">
+              <img src="images/header-bing.svg" alt="" class="document__icon" />
+              <p class="document__title">Выписка из реестра СРО</p>
+            </div>
+
+            <div class="document__card">
+              <img src="images/header-bing.svg" alt="" class="document__icon" />
+              <p class="document__title">
+                Выписка из реестра СРО (инженерные изыскания)
+              </p>
+            </div>
+
+            <div class="document__card">
+              <img src="images/header-bing.svg" alt="" class="document__icon" />
+              <p class="document__title">
+                Выписка из реестра СРО (проектная документация)
+              </p>
+            </div>
+
             <button class="container__licenses__btn">Подробнее</button>
           </div>
-          <h2 class="compony__clients__title">Наши клиенты</h2>
+          <h2 class="compony__clients__title">Наши заказчики</h2>
           <div class="clients__container">
             <img
               src="./images/clients-skeleton.svg"
@@ -219,13 +279,18 @@
           <div class="container__compony__help">
             <div class="card__compony__help">
               <p class="card__compony__help__title">
-                Вам нужен комплексный чек-ап зданий и сооружений ГТС?
+                Вам нужно комплексное обследование зданий и сооружений ГТС?
               </p>
               <p class="card__compony__help__text">
-                Создание автоматизированной системы сбора информации с КИА (АСО
-                КИА), а также ее интеграция в систему мониторинга за состоянием
-                сооружений (АСДК ГТС), позволяет осуществлять надзор за
-                состоянием и анализ полученных данных в режиме онлайн
+                Доверьте обследование гидротехнических сооружений
+                профессионалам! Мы проводим комплексные обследования и
+                инженерные изыскания с соблюдением всех норм законодательства
+                РФ, в т.ч. требований ФЗ-117 «О безопасности гидротехнических
+                сооружений». Наши услуги подходят как для текущего
+                эксплуатационного периода, так и для подготовки проектной
+                документации. Также выполняем необходимые расчёты и компьютерное
+                моделирование для оценки состояния и прогнозирования поведения
+                сооружений в различных условиях
               </p>
               <button class="card__help__btn">
                 Комплексное обследование зданий и сооружений
@@ -233,7 +298,7 @@
             </div>
             <div class="card__compony__help">
               <p class="card__compony__help__title">
-                У вас есть система КИА, но нет процесса анализа данных?
+                У вас есть КИА, но нет процесса анализа данных?
               </p>
               <p class="card__compony__help__text">
                 ИДС БИНГ разработана для проведения мониторинга технического
@@ -245,12 +310,13 @@
               <button class="card__help__btn">ИДС БИНГ</button>
             </div>
             <div class="card__compony__help">
-              <p class="card__compony__help__title">У вас нет системы КИА?</p>
+              <p class="card__compony__help__title">У вас нет КИА?</p>
               <p class="card__compony__help__text">
-                Создание автоматизированной системы сбора информации с КИА (АСО
-                КИА), а также ее интеграция в систему мониторинга за состоянием
-                сооружений (АСДК ГТС), позволяет осуществлять надзор за
-                состоянием и анализ полученных данных в режиме онлайн
+                Мы профессионально выполняем строительно‑монтажные работы по
+                установке контрольно‑измерительной аппаратуры и датчиков. Работа
+                ведётся в полном соответствии с законодательством РФ, в т. ч.
+                ФЗ-117 о безопасности ГТС. Гарантируем соблюдение отраслевых
+                стандартов, точность измерений и надёжность систем
               </p>
               <button class="card__help__btn">
                 Разработка и реализация проектов АСДК и сооружений
@@ -258,29 +324,35 @@
             </div>
             <div class="card__compony__help">
               <p class="card__compony__help__title">
-                У вас есть система КИА, но отсутствует автоматизированный
-                процесс сбора данных?
+                У вас нет КИА и нет ИДС и автоматизации?
               </p>
               <p class="card__compony__help__text">
-                Создание автоматизированной системы сбора информации с КИА (АСО
-                КИА), а также ее интеграция в систему мониторинга за состоянием
-                сооружений (АСДК ГТС), позволяет осуществлять надзор за
-                техническим состоянием и анализ полученных данных в режиме
-                онлайн
+                Компания реализует полный цикл создания АСДК сооружений:
+                разработка проектно‑сметной и рабочей документации, выполнение
+                строительно‑монтажных работ, поставка оборудования для
+                автоматизации контрольно‑измерительной аппаратуры и
+                измерительных приборов. Все этапы выполняются в соответствии с
+                действующим законодательством РФ.Работаем по схеме «под ключ» -
+                от проектирования до сдачи объекта в эксплуатацию. При этом вы
+                можете заказать и отдельный этап: например, разработку проекта
+                КИА без реализации остальных этапов
               </p>
               <button class="card__help__btn">Автоматизация КИА</button>
             </div>
             <div class="card__compony__help">
               <p class="card__compony__help__title">
-                У вас отсутствует система подготовки деклараций о безопасности
+                Пришли проверяющие или нужно оформить декларацию безопасности
                 ГТС?
               </p>
               <p class="card__compony__help__text">
-                Информационно-диагностическая система (ИДС) БИНГ разработана для
-                проведения мониторинга технического состояния зданий и
-                сооружений гидро- и тепловых электростанций, сооружений и
-                производственных зданий с целью повышения эффективности их
-                технического обслуживания и планирования ремонтных работ
+                Мы возьмём это на себя! Разработаем декларацию и критерии
+                безопасности по Постановлению № 1892, рассчитаем потенциальный
+                вред по методике Ростехнадзора (№ 516), подготовим технические
+                паспорта и программы мониторинга. Всё в строгом соответствии с
+                законодательством.Выполняем эти работы как для проектируемых
+                гидротехнических сооружений, так и для уже эксплуатируемых
+                объектов поможем привести документацию в порядок на любом этапе
+                жизненного цикла ГТС
               </p>
               <button class="card__help__btn">
                 Разработка деклараций безопасности
@@ -296,6 +368,16 @@
                 видеозаметки
               </p>
               <button class="card__help__btn">Планшет обходчика</button>
+            </div>
+            <div class="card__compony__help">
+              <p class="card__compony__help__title">Новая услуга</p>
+              <p class="card__compony__help__text">текст</p>
+              <button class="card__help__btn">Кнопка</button>
+            </div>
+            <div class="card__compony__help">
+              <p class="card__compony__help__title">Новая услуга</p>
+              <p class="card__compony__help__text">текст</p>
+              <button class="card__help__btn">Кнопка</button>
             </div>
           </div>
           <h2 class="compony__works__title">Этапы работы</h2>
@@ -460,58 +542,70 @@
           </div>
         </div>
       </section>
-
-      <footer class="footer">
-        <img src="./images/logo.svg" alt="" class="footer__image" />
-        <div class="container__about__us">
-          <p class="about__us__title">О нас</p>
-          <ul class="about__us__menu">
-            <li class="about__us__menu__item">
-              <a href="#" class="menu__link__item">История</a>
-            </li>
-            <li class="about__us__menu__item">
-              <a href="#" class="menu__link__item">Документация</a>
-            </li>
-            <li class="about__us__menu__item">
-              <a href="#" class="menu__link__item">Партнеры</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="container__clients">
-          <p class="clients__title">Клиентам</p>
-          <ul class="clients__menu">
-            <li class="clients__menu__item">
-              <a href="#" class="menu__link__item">Услуги</a>
-            </li>
-            <li class="clients__menu__item">
-              <a href="#" class="menu__link__item">Проекты</a>
-            </li>
-            <li class="clients__menu__item">
-              <a href="#" class="menu__link__item">Процесс</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="container__contacts">
-          <p class="contacts__title">Контакты</p>
-          <ul class="contacts__menu">
-            <li class="contacts__menu__item">тел. +7(977)518-20-26</li>
-            <li class="contacts__menu__item">
-              <a href="#" class="menu__link__item"
-                >Электронная почта geos@nppgeos.ru</a
-              >
-            </li>
-            <li class="contacts__menu__item">
-              <a href="#" class="menu__link__item"
-                >Адрес 127083, г. Москва, вн.тер.г. муниципальный округ
-                Аэропорт, ул. 8 Марта, д. 1, стр. 12, помещ. 11/20</a
-              >
-            </li>
-          </ul>
-        </div>
-      </footer>
     </main>
+
+    <footer class="footer">
+      <div class="footer__logo">
+        <img src="./images/logo.png" alt="" class="footer__image" />
+
+        <div class="logo__text__footer">
+          <p class="text__npp">ООО НПП</p>
+          <p class="text__geos">ГЕОС</p>
+        </div>
+      </div>
+
+      <div class="container__about__us">
+        <p class="about__us__title">О нас</p>
+        <ul class="about__us__menu">
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">История</a>
+          </li>
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">Документация</a>
+          </li>
+          <li class="about__us__menu__item">
+            <a href="#" class="menu__link__item">Партнеры</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container__clients">
+        <p class="clients__title">Клиентам</p>
+        <ul class="clients__menu">
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Услуги</a>
+          </li>
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Проекты</a>
+          </li>
+          <li class="clients__menu__item">
+            <a href="#" class="menu__link__item">Процесс</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container__contacts">
+        <p class="contacts__title">Контакты</p>
+        <ul class="contacts__menu">
+          <li class="contacts__menu__item">тел. +7(977)518-20-26</li>
+          <li class="contacts__menu__item">
+            <a href="#" class="menu__link__item"
+              >Электронная почта geos@nppgeos.ru</a
+            >
+          </li>
+          <li class="contacts__menu__item">
+            <a href="#" class="menu__link__item"
+              >Адрес 127083, г. Москва, вн.тер.г. муниципальный округ Аэропорт,
+              ул. 8 Марта, д. 1, стр. 12, помещ. 11/20</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./js/data_services.js"></script>
+    <script src="./js/index.js"></script>
 
     <script>
       // Бургер меню
@@ -589,6 +683,26 @@
       });
 
       console.log(burgerBtn);
+
+      // Переключение темы
+      const themeToggleBtn = document.getElementById("theme-toggle");
+
+      // Проверяем сохраненную тему в localStorage
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        body.classList.add("light-theme");
+      }
+
+      // themeToggleBtn.addEventListener("click", () => {
+      //   body.classList.toggle("light-theme");
+
+      //   // Сохраняем выбор пользователя
+      //   if (body.classList.contains("light-theme")) {
+      //     localStorage.setItem("theme", "light");
+      //   } else {
+      //     localStorage.setItem("theme", "dark");
+      //   }
+      // });
     </script>
   </body>
 </html>

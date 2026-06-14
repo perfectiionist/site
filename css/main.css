@@ -35,6 +35,34 @@
   --radius-md: 10px;
 }
 
+/* ======================
+   ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
+====================== */
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/bookmanOldStyleRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -48,7 +76,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Bookman Old Style", "Montserrat", serif;
   line-height: 1;
   background-color: var(--color-primary);
   color: var(--color-text);
@@ -107,17 +135,6 @@ ul {
   z-index: 1;
 }
 
-/* ======================
-   TOP BAR
-====================== */
-
-/* body.menu-open .burger-btn {
-  position: fixed;
-  top: 80px;
-  right: 130px;
-  z-index: 10002;
-} */
-
 /* Также убедимся, что header__top не создаёт stacking context */
 .header__top {
   width: 100%;
@@ -141,15 +158,28 @@ ul {
 .logo {
   justify-self: start;
   transition: transform var(--transition-base);
-}
-
-.logo:hover {
-  transform: scale(1.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
   display: block;
-  width: 170px;
+  width: 70px;
+}
+
+.logo__text {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.text__npp {
+  margin-bottom: 10px;
+}
+
+.text__geos {
+  font-size: 26px;
 }
 
 /* ======================
@@ -371,6 +401,7 @@ ul {
 .compony__clients__title::before,
 .compony__help__title::before,
 .compony__works__title::before,
+.compony__geography__title::before,
 .compony__projects__title::before {
   content: "";
   position: absolute;
@@ -435,6 +466,180 @@ ul {
   font-size: 20px;
   margin-bottom: 50px;
   color: var(--color-text-muted);
+}
+
+/* ================
+  ГЕОГРАФИЧЕСКОЕ ПРИСУТСВИЕ
+======================== */
+
+.map__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+#map {
+  height: 80vh;
+  width: 80%;
+  border-radius: 20px;
+}
+/* Скрываем стандартную атрибуцию Leaflet */
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+/* Стиль для tooltip при наведении */
+.custom-tooltip {
+  background: linear-gradient(135deg, #2e86c1, #1b4f72);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  border-left: 3px solid blue;
+  white-space: nowrap;
+}
+
+.custom-tooltip-name {
+  font-weight: bold;
+  color: white;
+}
+
+.custom-tooltip-org {
+  font-size: 11px;
+  color: white;
+}
+
+.leaflet-popup-content-wrapper {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(46, 134, 193, 0.3);
+}
+
+.leaflet-popup-tip {
+  background: #ffffff;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  min-width: 260px;
+}
+
+.popup-header {
+  background: linear-gradient(135deg, #2e86c1, #1b4f72);
+  color: white;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.popup-body {
+  padding: 12px 16px;
+}
+
+.popup-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.popup-row:last-child {
+  border-bottom: none;
+}
+
+.popup-icon {
+  width: 28px;
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+.popup-label {
+  flex: 1;
+  font-size: 12px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.popup-value {
+  flex: 2;
+  font-size: 13px;
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: right;
+}
+
+.popup-footer {
+  background: #f8f9fa;
+  padding: 8px 16px;
+  font-size: 10px;
+  color: #6c757d;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+}
+
+.leaflet-popup-close-button {
+  font-size: 12px !important;
+  font-weight: bold !important;
+  color: #ff4444 !important;
+  background: white !important;
+  border-radius: 50% !important;
+  width: 12px !important;
+  height: 12px !important;
+  line-height: 12px !important;
+  text-align: center !important;
+  top: 5px !important; /* ← поднимаем выше (было 8px) */
+  right: 8px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #ff0000 !important;
+  background: #ffeeee !important;
+  transform: scale(1.1);
+}
+
+.btn-reset-zoom {
+  background: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.info__panel {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #2e86c1, #1b4f72);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 1000;
+  opacity: 0.9;
+  pointer-events: none;
+  font-family: monospace;
+  font-weight: bold;
 }
 
 /* ======================
@@ -530,10 +735,57 @@ ul {
 ====================== */
 
 .container__licenses {
-  display: flex;
+  display: grid; /* ← Изменить с flex на grid */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* ← Автоматическое распределение */
   gap: 45px;
   width: 100%;
   margin-bottom: 60px;
+  align-items: stretch; /* ← Растянуть все карточки на одинаковую высоту */
+}
+
+.document__card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 320px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; /* ← Занять всю доступную высоту */
+}
+.document__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.document__icon {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0;
+  object-fit: cover;
+}
+
+.document__title {
+  font-size: 18px;
+  color: #15263b;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 500;
+  padding: 20px;
+  text-align: center;
+  flex: 1; /* ← Растянуть заголовок на оставшееся место */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .container__licenses__btn {
@@ -548,6 +800,7 @@ ul {
   border-radius: 5px;
   font-size: 20px;
   transition: all 0.2s ease-in-out;
+  font-family: inherit;
 }
 
 .container__licenses__btn:hover {
@@ -671,6 +924,7 @@ ul {
   padding: 14px 20px;
   font-size: var(--font-sm);
   font-weight: 500;
+  font-family: inherit;
   margin-top: auto;
   cursor: pointer;
   transition: all var(--transition-base);
@@ -782,6 +1036,7 @@ ul {
   cursor: pointer;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-sm);
+  font-family: inherit;
 }
 
 .compony__projects__about__btn:hover {
@@ -878,9 +1133,9 @@ ul {
   border-bottom: 2px solid rgba(21, 38, 59, 0.2);
   background: transparent;
   font-size: var(--font-sm);
-  font-family: "Montserrat", sans-serif;
   color: var(--color-primary);
   transition: border-color var(--transition-base);
+  font-family: inherit;
 }
 
 .form__input:focus {
@@ -936,8 +1191,7 @@ ul {
   color: white;
   padding: 18px 40px;
   font-size: var(--font-base);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-family: inherit; /* ← Добавить эту строку */
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition-base);
@@ -974,10 +1228,21 @@ ul {
   margin-top: 0;
 }
 
+.footer__logo {
+  display: flex;
+}
+
 .footer__image {
   height: 70px;
   padding-top: 5px;
   margin-left: 10px;
+}
+
+.logo__text__footer {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 15px;
 }
 
 .about__us__title,
@@ -1289,7 +1554,7 @@ ul {
   }
 
   .logo img {
-    width: 140px;
+    width: 70px;
   }
 
   .licenses__card {
@@ -1327,6 +1592,10 @@ ul {
     text-align: center;
   }
 
+  .logo__text__footer {
+    display: none;
+  }
+
   .footer__image {
     margin: 0 auto;
   }
@@ -1355,6 +1624,21 @@ ul {
   .header__text,
   .header__text-bottom {
     font-size: 18px;
+  }
+
+  .logo img {
+    width: 50px;
+  }
+
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 18px;
+    line-height: 1;
   }
 
   .menu__list {
@@ -1426,7 +1710,18 @@ ul {
   }
 
   .logo img {
-    width: 100px;
+    width: 40px;
+  }
+
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 12px; /* ← Добавить для единообразия */
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 16px;
+    line-height: 1;
   }
 
   .header__text,

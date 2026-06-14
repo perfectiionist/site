@@ -35,6 +35,34 @@
   --radius-md: 10px;
 }
 
+/* ======================
+   ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
+====================== */
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/bookmanOldStyleRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -47,7 +75,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Montserrat";
+  font-family: "Bookman Old Style", "Montserrat", serif;
   line-height: 1.5;
   background-color: #15263b;
   color: #fff;
@@ -106,11 +134,39 @@ ul {
 
 .logo {
   justify-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
   display: block;
-  width: 170px;
+  width: 70px;
+}
+
+.logo__text {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.logo__text__footer {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.text__npp {
+  margin-bottom: 10px;
+  font-size: 16px; /* ← Добавить для единообразия */
+  line-height: 1;
+}
+
+.text__geos {
+  font-size: 26px;
+  line-height: 1;
 }
 
 /* ======================
@@ -584,6 +640,17 @@ ul {
   margin-left: 10px;
 }
 
+.footer__logo {
+  display: flex;
+}
+
+.logo__text__footer {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
 .about__us__title,
 .clients__title,
 .contacts__title {
@@ -628,19 +695,35 @@ img {
   display: block;
 }
 
+/* ==========================================
+   1400px
+========================================== */
+
+@media (max-width: 1400px) {
+  .header__title {
+    font-size: 60px;
+  }
+
+  .menu__list {
+    gap: 20px;
+  }
+
+  .menu__link {
+    font-size: 22px;
+  }
+}
+
 /* ======================
    TABLET LANDSCAPE (до 1200px)
 ====================== */
 
 @media (max-width: 1200px) {
   .menu__list {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 15px;
   }
 
   .menu__link {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .about__bing {
@@ -659,12 +742,6 @@ img {
 
   .consultation__title {
     font-size: 40px;
-  }
-
-  .footer {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 50px 30px;
   }
 }
 
@@ -798,6 +875,9 @@ img {
     margin-bottom: 40px;
   }
 
+  .logo img {
+    width: 70px;
+  }
   .block__title {
     margin-bottom: 25px;
   }
@@ -886,6 +966,10 @@ img {
     gap: 25px;
   }
 
+  .logo__text__footer {
+    display: none;
+  }
+
   .about__us__title,
   .clients__title,
   .contacts__title {
@@ -907,7 +991,18 @@ img {
 
 @media (max-width: 480px) {
   .logo img {
-    width: 130px;
+    width: 50px;
+  }
+
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 14px; /* ← Добавить для единообразия */
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 18px;
+    line-height: 1;
   }
 
   .menu__list {

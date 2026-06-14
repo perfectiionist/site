@@ -35,6 +35,34 @@
   --radius-md: 10px;
 }
 
+/* ======================
+   ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
+====================== */
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/bookmanOldStyleRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   box-sizing: border-box;
@@ -55,7 +83,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #15263b;
-  font-family: "Montserrat";
+  font-family: "Bookman Old Style", "Montserrat", serif;
   line-height: 1.5;
   color: #fff;
   font-size: 20px;
@@ -120,11 +148,39 @@ ul {
 
 .logo {
   justify-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
   display: block;
-  width: 170px;
+  width: 70px;
+}
+
+.logo__text {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.logo__text__footer {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.text__npp {
+  margin-bottom: 10px;
+  font-size: 16px; /* ← Добавить для единообразия */
+  line-height: 1;
+}
+
+.text__geos {
+  font-size: 26px;
+  line-height: 1;
 }
 
 /* ======================
@@ -242,6 +298,17 @@ ul {
   height: 70px;
   padding-top: 5px;
   margin-left: 10px;
+}
+
+.footer__logo {
+  display: flex;
+}
+
+.logo__text__footer {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 15px;
 }
 
 .about__us__title,
@@ -412,7 +479,7 @@ ul {
   }
 
   .logo img {
-    width: 140px;
+    width: 70px;
   }
 
   .menu__list {
@@ -452,6 +519,10 @@ ul {
     gap: 25px;
   }
 
+  .logo__text__footer {
+    display: none;
+  }
+
   .footer__image {
     margin: 0 auto;
   }
@@ -481,7 +552,18 @@ ul {
   }
 
   .logo img {
-    width: 120px;
+    width: 50px;
+  }
+
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 14px; /* ← Добавить для единообразия */
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 18px;
+    line-height: 1;
   }
 
   .menu__list {
@@ -520,9 +602,19 @@ ul {
 
 @media (max-width: 420px) {
   .logo img {
-    width: 100px;
+    width: 40px;
   }
 
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 12px; /* ← Добавить для единообразия */
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 16px;
+    line-height: 1;
+  }
   .menu__link {
     font-size: 14px;
   }

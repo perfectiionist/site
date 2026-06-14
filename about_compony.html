@@ -19,8 +19,12 @@
       <div class="header__top">
         <div class="container">
           <div class="header__top-inner">
-            <a href="./index.html" class="logo">
-              <img src="images/logo.svg" alt="ГЕОС" />
+            <a href="index.html" class="logo">
+              <img src="images/logo.png" alt="ГЕОС" />
+              <div class="logo__text">
+                <p class="text__npp">ООО НПП</p>
+                <p class="text__geos">ГЕОС</p>
+              </div>
             </a>
 
             <nav class="menu">
@@ -36,12 +40,44 @@
                 </li>
                 <li><a href="projects.html" class="menu__link">Проекты</a></li>
                 <li><a href="#" class="menu__link">Этапы</a></li>
-                <li><a href="#" class="menu__link">Заказчики</a></li>
+                <li>
+                  <a href="customers.html" class="menu__link">Заказчики</a>
+                </li>
                 <li>
                   <a href="our_contacts.html" class="menu__link">Контакты</a>
                 </li>
               </ul>
             </nav>
+
+            <!-- Внутри <div class="header__top-inner"> -->
+            <!-- <button
+              id="theme-toggle"
+              class="theme-toggle-btn"
+              aria-label="Переключить тему"
+            >
+            
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button> -->
 
             <button class="burger-btn" aria-label="Открыть меню">
               <span class="burger-line"></span>
@@ -71,7 +107,9 @@
             <a href="projects.html" class="mobile-menu__link">Проекты</a>
           </li>
           <li><a href="#" class="mobile-menu__link">Этапы</a></li>
-          <li><a href="#" class="mobile-menu__link">Заказчики</a></li>
+          <li>
+            <a href="customers.html" class="mobile-menu__link">Заказчики</a>
+          </li>
           <li>
             <a href="our_contacts.html" class="mobile-menu__link">Контакты</a>
           </li>
@@ -115,7 +153,7 @@
             1991 года
           </p>
           <p class="second__paragraph">
-            ООО НПП «ГЕОС» - компания более 30 лет работает в сфере обеспечения
+            ООО НПП «ГЕОС» - компания более 35 лет работает в сфере обеспечения
             комплексно безопасности гидротехнических сооружений С момента
             основания в 1991 году наша компания успешно реализовала более 600
             проектов для:
@@ -138,12 +176,12 @@
         <div class="about__info">
           <div class="about__info__card">
             <img src="./images/time.svg" alt="" />
-            <p class="about__info__card__text">30 лет на рынке</p>
+            <p class="about__info__card__text">35 лет на рынке</p>
           </div>
           <div class="about__info__card">
             <img src="./images/project.svg" alt="" />
             <p class="about__info__card__text">
-              Более 200 реализованных проектов
+              Более 600 реализованных проектов
             </p>
           </div>
           <div class="about__info__card">
@@ -152,7 +190,9 @@
               alt=""
               class="about__info__card__img__staffs"
             />
-            <p class="about__info__card__text__staffs">Более 50 сотрудников</p>
+            <p class="about__info__card__text__staffs">
+              Более 50 сотрудников и экспертов
+            </p>
           </div>
         </div>
         <div class="activity">
@@ -200,7 +240,7 @@
               электротехнического оборудования.
             </p>
             <br />
-            <p class="second__activity__text">
+            <p class="text__fourth__activity">
               Индивидуальный подход к каждому проекту (гидротехническому
               сооружению) и тонкая настройка функционала на конкретные объекты
               контроля – ничего лишнего.
@@ -213,22 +253,51 @@
           </div>
           <div class="fourth__activity">
             <p class="title__fourth__activity">
-              Разработка эксплуатационной и технической документации для ГТС
+              Разработка и внедрение проектов автоматизированных систем
+              диагностического контроля гидротехнических сооружений (АСДК)
             </p>
             <br />
-            <p class="text__fourth__activity">Мы обеспечиваем:</p>
-            <ul class="list__third__activity">
-              <li class="item__third__activity">
-                Строгое соответствие требованиям Законодателсьвта РФ (включая
-                117-ФЗ и другие нормативно-правовые акты);
+            <p class="text__fourth__activity">
+              Осуществляется в соответствии с требованиями Федерального закона
+              от 21 июля 1997 г. № 117-ФЗ «О безопасности гидротехнических
+              сооружений». Согласно ФЗ собственник и/или эксплуатирующая
+              организация обязаны обеспечивать мониторинг состояния ГТС.
+            </p>
+            <br />
+            <p class="text__fourth__activity">
+              АСДК включает в себя полный перечень услуг для обеспечения
+              безопасной эксплуатации ГТС:
+            </p>
+            <br />
+            <ul class="first__activity__list">
+              <li class="item__activity__list">
+                верхний уровень: ИДС БИНГ, обеспечивающую сбор, хранение,
+                обработку и анализ первичных результатов измерений по КИА,
+                оперативное диагностирование и оценку состояния ГТС;
               </li>
-              <li class="item__third__activity">
-                подготовку полной документации, необходимой для эксплуатации и
-                обслуживания объектов ГТС;
+              <li class="item__activity__list">
+                нижний уровень: автоматизированную систему опроса
+                контрольно‑измерительной аппаратуры (АСО КИА) с использованием
+                датчиков, установленных в сооружениях, и телекоммуникационных
+                средств передачи результатов измерений на сервер сбора данных.
               </li>
-              <li class="item__third__activity">
-                оптимизация сроков ввода объектов в эксплуатацию за счёт
-                качественной подготовки документации (под вопросом)
+            </ul>
+            <p class="text__fourth__activity">
+              Мы предлагаем уникальный подход к каждому сооружению и создаём
+              индивидуальные решения, которые позволяют:
+            </p>
+            <br />
+            <ul class="first__activity__list">
+              <li class="item__activity__list">
+                оперативно мониторить техническое состояние объектов в рамках
+                требований законодательства;
+              </li>
+              <li class="item__activity__list">
+                предотвращать аварийные ситуации за счёт раннего выявления
+                отклонений;
+              </li>
+              <li class="item__activity__list">
+                оптимизировать эксплуатацию на основе данных мониторинга.
               </li>
             </ul>
           </div>
@@ -318,7 +387,15 @@
       </div>
     </main>
     <footer class="footer">
-      <img src="./images/logo.svg" alt="" class="footer__image" />
+      <div class="footer__logo">
+        <img src="./images/logo.png" alt="" class="footer__image" />
+
+        <div class="logo__text__footer">
+          <p class="text__npp">ООО НПП</p>
+          <p class="text__geos">ГЕОС</p>
+        </div>
+      </div>
+
       <div class="container__about__us">
         <p class="about__us__title">О нас</p>
         <ul class="about__us__menu">

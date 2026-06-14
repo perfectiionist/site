@@ -35,6 +35,34 @@
   --radius-md: 10px;
 }
 
+/* ======================
+   ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
+====================== */
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/bookmanOldStyleRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -47,7 +75,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Montserrat";
+  font-family: "Bookman Old Style", "Montserrat", serif;
   line-height: 1.5;
   background-color: #15263b;
   color: #fff;
@@ -103,11 +131,32 @@ ul {
 
 .logo {
   justify-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
   display: block;
-  width: 170px;
+  width: 70px;
+}
+
+.logo__text {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.text__npp {
+  margin-bottom: 10px;
+  font-size: 16px; /* ← Добавить для единообразия */
+  line-height: 1;
+}
+
+.text__geos {
+  font-size: 26px;
+  line-height: 1;
 }
 
 /* ======================
@@ -163,19 +212,39 @@ ul {
 .first__paragraph {
   font-size: 20px;
   margin-bottom: 20px;
+  font-weight: 500;
+  color: var(--color-accent);
 }
 
 .second__paragraph {
-  line-height: 1.5;
   font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 
 .second__paragraph__menu {
   font-size: 20px;
-  line-height: 1.5;
-  list-style-type: disc;
+  line-height: 1.6;
+  list-style-type: none;
   margin-left: 20px;
   margin-bottom: 10px;
+}
+
+.second__paragraph__menu__item {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+}
+
+.second__paragraph__menu__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
 }
 
 .third__paragraph {
@@ -262,9 +331,9 @@ ul {
 }
 
 .first__activity__list {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.5;
-  list-style-type: disc;
+  list-style-type: none;
   margin-left: 20px;
   margin-bottom: 10px;
 }
@@ -300,9 +369,26 @@ ul {
 }
 
 .list__third__activity {
-  list-style-type: disc;
+  list-style-type: none;
   margin-left: 20px;
   margin-bottom: 10px;
+}
+
+.item__third__activity {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+}
+
+.item__third__activity::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
 }
 
 .fifth__activity {
@@ -329,6 +415,17 @@ ul {
   background: #0f1c2e;
   border-top: 1px solid var(--color-border);
   margin-top: 0;
+}
+
+.footer__logo {
+  display: flex;
+}
+
+.logo__text__footer {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 15px;
 }
 
 .footer__image {
@@ -381,6 +478,23 @@ ul {
   font-size: 18px;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.item__activity__list {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+}
+
+.item__activity__list::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
 }
 
 /* ==========================================
@@ -543,7 +657,7 @@ ul {
   }
 
   .logo img {
-    width: 140px;
+    width: 70px;
   }
 
   .menu__list {
@@ -632,6 +746,10 @@ ul {
     margin: 0 auto;
   }
 
+  .logo__text__footer {
+    display: none;
+  }
+
   .about__us__title,
   .clients__title,
   .contacts__title {
@@ -657,7 +775,18 @@ ul {
   }
 
   .logo img {
-    width: 120px;
+    width: 50px;
+  }
+
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 14px; /* ← Добавить для единообразия */
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 18px;
+    line-height: 1;
   }
 
   .menu__list {
@@ -734,7 +863,18 @@ ul {
 
 @media (max-width: 420px) {
   .logo img {
-    width: 100px;
+    width: 40px;
+  }
+
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 12px; /* ← Добавить для единообразия */
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 16px;
+    line-height: 1;
   }
 
   .menu__link {

@@ -35,6 +35,34 @@
   --radius-md: 10px;
 }
 
+/* ======================
+   ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
+====================== */
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/bookmanOldStyleRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bookman Old Style";
+  src: url("../fonts/BookmanOldStyleBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -57,7 +85,7 @@ body {
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: "Bookman Old Style", "Montserrat", serif;
   line-height: 1;
   background-color: #15263b;
   color: #fff;
@@ -126,11 +154,32 @@ main {
 
 .logo {
   justify-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
   display: block;
-  width: 170px;
+  width: 70px;
+}
+
+.logo__text {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.text__npp {
+  margin-bottom: 10px;
+  font-size: 16px; /* ← Добавить для единообразия */
+  line-height: 1;
+}
+
+.text__geos {
+  font-size: 26px;
+  line-height: 1;
 }
 
 /* ======================
@@ -289,6 +338,17 @@ main {
   height: 70px;
   padding-top: 5px;
   margin-left: 10px;
+}
+
+.footer__logo {
+  display: flex;
+}
+
+.logo__text__footer {
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 15px;
 }
 
 .about__us__title,
@@ -495,7 +555,7 @@ main {
   }
 
   .logo img {
-    width: 140px;
+    width: 70px;
   }
 
   .menu__list {
@@ -557,6 +617,10 @@ main {
     gap: 25px;
   }
 
+  .logo__text__footer {
+    display: none;
+  }
+
   .footer__image {
     margin: 0 auto;
   }
@@ -586,7 +650,18 @@ main {
   }
 
   .logo img {
-    width: 120px;
+    width: 50px;
+  }
+
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 18px;
+    line-height: 1;
   }
 
   .menu__list {
@@ -656,9 +731,19 @@ main {
 
 @media (max-width: 420px) {
   .logo img {
-    width: 100px;
+    width: 50px;
   }
 
+  .text__npp {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .text__geos {
+    font-size: 16px;
+    line-height: 1;
+  }
   .menu__link {
     font-size: 14px;
   }
