@@ -1452,6 +1452,11 @@ ul {
     max-width: 100%;
   }
 
+  #map {
+    width: 100%;
+    height: 60vh;
+  }
+
   /* Statistics */
 
   .about__info {
@@ -1516,6 +1521,9 @@ ul {
 ========================================== */
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
   :root {
     --font-xl: 30px;
   }
@@ -1585,6 +1593,11 @@ ul {
 
   .consultation__btn {
     width: 100%;
+  }
+
+  #map {
+    height: 50vh;
+    border-radius: 10px;
   }
 
   .footer {
@@ -1693,6 +1706,10 @@ ul {
 
   .consultation__title {
     font-size: 24px;
+  }
+
+  #map {
+    height: 45vh;
   }
 
   .footer {
