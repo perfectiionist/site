@@ -40,7 +40,7 @@
                   >
                 </li>
                 <li><a href="projects.html" class="menu__link">Проекты</a></li>
-                <li><a href="#" class="menu__link">Этапы</a></li>
+
                 <li>
                   <a href="customers.html" class="menu__link">Заказчики</a>
                 </li>
@@ -49,6 +49,34 @@
                 </li>
               </ul>
             </nav>
+
+            <button
+              id="theme-toggle"
+              class="theme-toggle-btn"
+              aria-label="Переключить тему"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button>
 
             <button class="burger-btn" aria-label="Открыть меню">
               <span class="burger-line"></span>
@@ -77,7 +105,7 @@
           <li>
             <a href="projects.html" class="mobile-menu__link">Проекты</a>
           </li>
-          <li><a href="#" class="mobile-menu__link">Этапы</a></li>
+
           <li>
             <a href="customers.html" class="mobile-menu__link">Заказчики</a>
           </li>
@@ -91,10 +119,7 @@
     <main>
       <div class="container">
         <p class="title">Проекты</p>
-        <div class="about__projects__block">
-          <p class="text__about__projects"></p>
-          <img src="./images/doc-img.svg" alt="" class="image__projects" />
-        </div>
+
         <div class="projects-carousel-wrapper">
           <button
             class="carousel-arrow carousel-arrow--prev"
@@ -116,14 +141,16 @@
             <div class="project-card active">
               <div class="project-card__image-wrapper">
                 <img
-                  src="./images/Рыбинская_ГЭС.jpg"
-                  alt="Рыбинская ГЭС"
+                  src="./images/krasnoyarsk.jpg"
+                  alt="Красноярская ГЭС"
                   class="project-card__image"
                 />
-                <span class="project-card__year">2008</span>
+                <span class="project-card__name">Красноярская ГЭС</span>
+                <span class="project-card__year">2014-2015</span>
                 <div class="project-card__overlay">
                   <p class="project-card__text">
-                    Разработка проекта автоматизации КИА Рыбинской ГЭС
+                    Разработка информационно-диагностической системы (ИДС)
+                    контроля состояния ГТС
                   </p>
                 </div>
               </div>
@@ -132,48 +159,116 @@
             <div class="project-card">
               <div class="project-card__image-wrapper">
                 <img
-                  src="./images/Рыбинская_ГЭС.jpg"
-                  alt="Проект"
+                  src="./images/niznekamsk.jpg"
+                  alt="Нижнекамская ГЭС"
                   class="project-card__image"
                 />
-                <span class="project-card__year">2009</span>
-              </div>
-              <div class="project-card__overlay">
-                <p class="project-card__text">
-                  Модернизация системы мониторинга ГЭС
-                </p>
+                <span class="project-card__name">Нижнекамская ГЭС</span>
+                <span class="project-card__year">2015</span>
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    Строительство автоматизированной системы диагностики и
+                    контроля технологических параметров состояния
+                    гидротехнических сооружений Нижнекамской ГЭС
+                  </p>
+                </div>
               </div>
             </div>
 
             <div class="project-card">
               <div class="project-card__image-wrapper">
                 <img
-                  src="./images/Рыбинская_ГЭС.jpg"
-                  alt="Проект"
+                  src="./images/№294.jpg"
+                  alt="Канал №294"
                   class="project-card__image"
                 />
-                <span class="project-card__year">2010</span>
-              </div>
-              <div class="project-card__overlay">
-                <p class="project-card__text">
-                  Внедрение ИДС БИНГ на гидроэлектростанции
-                </p>
+                <span class="project-card__name">Канал №294</span>
+                <span class="project-card__year">2020</span>
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    Программное обеспечения блока информирования о превышении
+                    критериальных показателей уровней воды в автоматизированных
+                    пьезометрах на базе данных ИДС БИНГ-3
+                  </p>
+                </div>
               </div>
             </div>
 
             <div class="project-card">
               <div class="project-card__image-wrapper">
                 <img
-                  src="./images/Рыбинская_ГЭС.jpg"
-                  alt="Проект"
+                  src="./images/bagaev.jpg"
+                  alt="Багаевский гидроузел"
                   class="project-card__image"
                 />
-                <span class="project-card__year">2011</span>
+                <span class="project-card__name">Багаевский гидроузел</span>
+                <span class="project-card__year">2024</span>
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    СМР и ПНР системы мониторинга технического состояния
+                    гидротехнической и строительной части сооружений и
+                    механического оборудования по объекту: «Строительство
+                    Багаевского гидроузла на р. Дон». Объекты 2-го этапа
+                    (основного периода)
+                  </p>
+                </div>
               </div>
-              <div class="project-card__overlay">
-                <p class="project-card__text">
-                  Автоматизация контроля состояния сооружений
-                </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/smolensk.jpg"
+                  alt="Смоленская ГЭС"
+                  class="project-card__image"
+                />
+                <span class="project-card__name">Смоленская ГРЭС</span>
+                <span class="project-card__year">2024</span>
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    Предпроектное обследование для разработки: Система контроля
+                    безопасности и надежности гидротехнических сооружений и
+                    оснований БИНГ-4
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/fabric.jpg"
+                  alt="Хвостохранилище обогатительной фабрики"
+                  class="project-card__image"
+                />
+                <span class="hvost__project-card__name"
+                  >Хвостохранилище обогатительной фабрики</span
+                >
+                <span class="hvost__project-card__year">2026</span>
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    Оказать услуги по проектированию и внедрению
+                    (пуско-наладочные работы) автоматизированной системы
+                    диагностического контроля ГТС
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/zagorsk.jpg"
+                  alt="Загорская ГАЭС"
+                  class="project-card__image"
+                />
+                <span class="project-card__name">Загорская ГАЭС</span>
+                <span class="project-card__year">2026</span>
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    Поверка (калибровка) средств измерений АСДК
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -412,6 +507,30 @@
         // Запуск автоплея
         startAutoPlay();
       });
+
+      // Переключение темы
+      const themeToggleBtn = document.getElementById("theme-toggle");
+
+      // Проверяем сохраненную тему в localStorage
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        body.classList.add("light-theme");
+      }
+
+      // Если кнопка существует, добавляем обработчик
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+          document.body.classList.toggle("light-theme");
+
+          if (document.body.classList.contains("light-theme")) {
+            localStorage.setItem("theme", "light");
+            // Опционально: сменить иконку на луну
+          } else {
+            localStorage.setItem("theme", "dark");
+            // Опционально: сменить иконку на солнце
+          }
+        });
+      }
     </script>
   </body>
 </html>

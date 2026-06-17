@@ -36,6 +36,67 @@
 }
 
 /* ======================
+   СВЕТЛАЯ ТЕМА (LIGHT THEME)
+   На основе предоставленной палитры
+====================== */
+
+body.light-theme {
+  /* Основные фоны */
+  --color-primary: #f6fcff; /* Был #15263B -> Стал очень светлым фоном */
+  --color-secondary: #e5f4fb; /* Был #364F72 -> Светло-голубой для хедера/подложек */
+  --color-light-bg: #deeeff; /* Был #E8F4F8 -> Бледно-голубой для секций */
+
+  /* Тексты */
+  --color-text: #000000; /* Был белый -> Черный */
+  --color-text-muted: #111b25; /* Был полупрозрачный белый -> Темно-серый */
+
+  /* Акценты и границы */
+  --color-accent: #f39b42; /* Чуть более насыщенный оранжевый */
+  --color-border: #324a68; /* Серо-синий для границ вместо прозрачного оранжевого */
+
+  /* Тени нужно сделать темнее, так как фон светлый */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .feature__card {
+  background: var(--color-primary);
+}
+
+body.light-theme .feature__number {
+  color: rgba(50, 74, 104, 0.4);
+}
+
+body.light-theme .feature__text {
+  color: var(--color-text);
+}
+
+body.light-theme .document__card {
+  border: 1px solid black;
+}
+
+/* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
+
+body.light-theme .footer {
+  background: #0f1c2e;
+  border-top-color: #324a68;
+}
+body.light-theme .about__us__title,
+body.light-theme .clients__title,
+body.light-theme .contacts__title {
+  color: #f39b42;
+}
+body.light-theme .about__us__menu__item,
+body.light-theme .clients__menu__item,
+body.light-theme .contacts__menu__item,
+body.light-theme .text__npp,
+body.light-theme .text__geos {
+  color: #fff;
+}
+
+/* ======================
    ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
 ====================== */
 
@@ -77,8 +138,8 @@ body {
   margin: 0;
   font-family: "Bookman Old Style", "Montserrat", serif;
   line-height: 1.5;
-  background-color: #15263b;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-text);
   font-size: 20px;
 }
 
@@ -212,6 +273,10 @@ ul {
   width: 100%;
 }
 
+.arrow_right {
+  margin-top: 5px;
+}
+
 .block__title {
   display: flex;
   margin-bottom: 40px;
@@ -219,19 +284,20 @@ ul {
 
 .first__title__services {
   font-size: 30px;
-  margin-right: 55px;
+  margin-right: 15px;
 }
 
 .second__title__services {
   font-size: 30px;
   font-weight: bold;
+  margin-left: 15px;
 }
 
 .about__bing {
   display: grid;
   grid-template-columns: 1fr 562px;
   gap: 40px;
-  margin-bottom: 150px;
+  margin-bottom: 60px;
 }
 
 .about__bing__text {
@@ -245,6 +311,7 @@ ul {
   font-size: 36px;
   font-weight: 400;
   margin-bottom: 25px;
+  color: var(--color-accent);
 }
 
 .text__about__bing {
@@ -270,7 +337,7 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-bottom: 60px;
-  padding-top: 70px;
+  padding-top: 30px;
 }
 
 .feature__card {
@@ -620,6 +687,58 @@ ul {
   transform: translateY(0);
 }
 
+.container__licenses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px;
+  width: 100%;
+  max-width: 600px; /* ← Ограничиваем общую ширину блока */
+  align-items: stretch;
+}
+
+.document__card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 320px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.document__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.document__icon {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0;
+  object-fit: cover;
+}
+
+.document__title {
+  font-size: 18px;
+  color: #15263b;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 500;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 /* ======================
    FOOTER
 ====================== */
@@ -771,7 +890,6 @@ img {
   }
 
   .block__title {
-    flex-direction: column;
     gap: 10px;
     margin-bottom: 30px;
   }
@@ -851,6 +969,11 @@ img {
     max-width: 400px;
   }
 
+  .arrow_right {
+    height: 30px;
+    width: 30px;
+  }
+
   .footer {
     grid-template-columns: 1fr;
     text-align: center;
@@ -859,6 +982,10 @@ img {
 
   .footer__image {
     margin: 0 auto;
+  }
+
+  .logo__text__footer {
+    display: none;
   }
 }
 
@@ -961,6 +1088,21 @@ img {
     font-size: 16px;
   }
 
+  .container__licenses {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .licenses__card {
+    width: 100%;
+  }
+
+  .arrow_right {
+    width: 50px;
+    height: 35px;
+    margin-right: -10px;
+  }
+
   .footer {
     padding: 30px 15px;
     gap: 25px;
@@ -1052,6 +1194,11 @@ img {
     width: 100%;
     padding: 14px 20px;
     font-size: 15px;
+  }
+
+  .container__licenses {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .footer {
@@ -1220,25 +1367,6 @@ img {
   transform: scaleY(1);
 }
 
-/* Оверлей */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
 /* Блокировка скролла body */
 body.menu-open {
   overflow: hidden;
@@ -1282,5 +1410,62 @@ body.menu-open {
   .mobile-menu__link {
     font-size: 16px;
     padding: 15px 20px;
+  }
+}
+
+/* ======================
+   КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ
+====================== */
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-left: 40px;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: rotate(15deg) scale(1.05);
+}
+
+.theme-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Анимация иконки при переключении */
+body.light-theme .theme-toggle-btn svg {
+  transform: rotate(360deg);
+  color: #fff;
+  stroke: #fff;
+}
+
+/* В мобильном меню кнопка должна быть видна */
+@media (max-width: 992px) {
+  .theme-toggle-btn {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+
+    top: 10px;
+    right: 20px;
+  }
+
+  .theme-toggle-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }

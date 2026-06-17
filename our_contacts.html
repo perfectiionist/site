@@ -43,7 +43,7 @@
                   >
                 </li>
                 <li><a href="projects.html" class="menu__link">Проекты</a></li>
-                <li><a href="#" class="menu__link">Этапы</a></li>
+
                 <li>
                   <a href="customers.html" class="menu__link">Заказчики</a>
                 </li>
@@ -52,6 +52,34 @@
                 </li>
               </ul>
             </nav>
+
+            <button
+              id="theme-toggle"
+              class="theme-toggle-btn"
+              aria-label="Переключить тему"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button>
 
             <button class="burger-btn" aria-label="Открыть меню">
               <span class="burger-line"></span>
@@ -80,7 +108,7 @@
           <li>
             <a href="projects.html" class="mobile-menu__link">Проекты</a>
           </li>
-          <li><a href="#" class="mobile-menu__link">Этапы</a></li>
+
           <li>
             <a href="customers.html" class="mobile-menu__link">Заказчики</a>
           </li>
@@ -288,6 +316,30 @@
           closeMenu();
         }
       });
+
+      // Переключение темы
+      const themeToggleBtn = document.getElementById("theme-toggle");
+
+      // Проверяем сохраненную тему в localStorage
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        body.classList.add("light-theme");
+      }
+
+      // Если кнопка существует, добавляем обработчик
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+          document.body.classList.toggle("light-theme");
+
+          if (document.body.classList.contains("light-theme")) {
+            localStorage.setItem("theme", "light");
+            // Опционально: сменить иконку на луну
+          } else {
+            localStorage.setItem("theme", "dark");
+            // Опционально: сменить иконку на солнце
+          }
+        });
+      }
     </script>
   </body>
 </html>

@@ -36,6 +36,55 @@
 }
 
 /* ======================
+   СВЕТЛАЯ ТЕМА (LIGHT THEME)
+   На основе предоставленной палитры
+====================== */
+
+body.light-theme {
+  /* Основные фоны */
+  --color-primary: #f6fcff; /* Был #15263B -> Стал очень светлым фоном */
+  --color-secondary: #e5f4fb; /* Был #364F72 -> Светло-голубой для хедера/подложек */
+  --color-light-bg: #deeeff; /* Был #E8F4F8 -> Бледно-голубой для секций */
+
+  /* Тексты */
+  --color-text: #000000; /* Был белый -> Черный */
+  --color-text-muted: #111b25; /* Был полупрозрачный белый -> Темно-серый */
+
+  /* Акценты и границы */
+  --color-accent: #f39b42; /* Чуть более насыщенный оранжевый */
+  --color-border: #324a68; /* Серо-синий для границ вместо прозрачного оранжевого */
+
+  /* Тени нужно сделать темнее, так как фон светлый */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
+
+body.light-theme .footer {
+  background: #0f1c2e;
+  border-top-color: #324a68;
+}
+body.light-theme .about__us__title,
+body.light-theme .clients__title,
+body.light-theme .contacts__title {
+  color: #f39b42;
+}
+body.light-theme .about__us__menu__item,
+body.light-theme .clients__menu__item,
+body.light-theme .contacts__menu__item,
+body.light-theme .text__npp,
+body.light-theme .text__geos {
+  color: #fff;
+}
+
+body.light-theme .document__card {
+  border: 1px solid black;
+}
+
+/* ======================
    ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
 ====================== */
 
@@ -82,10 +131,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #15263b;
+  background-color: var(--color-primary);
   font-family: "Bookman Old Style", "Montserrat", serif;
   line-height: 1.5;
-  color: #fff;
+  color: var(--color-text);
   font-size: 20px;
 }
 
@@ -230,6 +279,7 @@ ul {
   font-size: 36px;
   font-weight: 400;
   margin-bottom: 25px;
+  color: var(--color-accent);
 }
 
 .documents__grid {
@@ -861,5 +911,62 @@ body.menu-open {
   .mobile-menu__link {
     font-size: 16px;
     padding: 15px 20px;
+  }
+}
+
+/* ======================
+   КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ
+====================== */
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-left: 40px;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: rotate(15deg) scale(1.05);
+}
+
+.theme-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Анимация иконки при переключении */
+body.light-theme .theme-toggle-btn svg {
+  transform: rotate(360deg);
+  color: #fff;
+  stroke: #fff;
+}
+
+/* В мобильном меню кнопка должна быть видна */
+@media (max-width: 992px) {
+  .theme-toggle-btn {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+
+    top: 10px;
+    right: 20px;
+  }
+
+  .theme-toggle-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }

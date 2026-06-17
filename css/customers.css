@@ -36,6 +36,63 @@
 }
 
 /* ======================
+   СВЕТЛАЯ ТЕМА (LIGHT THEME)
+   На основе предоставленной палитры
+====================== */
+
+body.light-theme {
+  /* Основные фоны */
+  --color-primary: #f6fcff; /* Был #15263B -> Стал очень светлым фоном */
+  --color-secondary: #e5f4fb; /* Был #364F72 -> Светло-голубой для хедера/подложек */
+  --color-light-bg: #deeeff; /* Был #E8F4F8 -> Бледно-голубой для секций */
+
+  /* Тексты */
+  --color-text: #000000; /* Был белый -> Черный */
+  --color-text-muted: #111b25; /* Был полупрозрачный белый -> Темно-серый */
+
+  /* Акценты и границы */
+  --color-accent: #f39b42; /* Чуть более насыщенный оранжевый */
+  --color-border: #324a68; /* Серо-синий для границ вместо прозрачного оранжевого */
+
+  /* Тени нужно сделать темнее, так как фон светлый */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .header {
+  color: white;
+}
+
+body.light-theme .clients__skeleton {
+  border: 1px solid black;
+}
+
+body.light-theme .title {
+  color: #e59349;
+}
+
+/* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
+
+body.light-theme .footer {
+  background: #0f1c2e;
+  border-top-color: #324a68;
+}
+body.light-theme .about__us__title,
+body.light-theme .clients__title,
+body.light-theme .contacts__title {
+  color: #f39b42;
+}
+body.light-theme .about__us__menu__item,
+body.light-theme .clients__menu__item,
+body.light-theme .contacts__menu__item,
+body.light-theme .text__npp,
+body.light-theme .text__geos {
+  color: #fff;
+}
+
+/* ======================
      ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
   ====================== */
 
@@ -211,33 +268,78 @@ ul {
 }
 
 /* ======================
-   КЛИЕНТЫ
+   КЛИЕНТЫ (Слайдер)
 ====================== */
 
 .clients__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 30px;
   margin-bottom: 80px;
+
+  padding: 20px;
+  /* Настройки прокрутки */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px; /* Отступ под скроллбар */
+
+  /* Стилизация скроллбара */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) transparent;
+}
+
+/* Скроллбар для Chrome/Safari */
+.clients__container::-webkit-scrollbar {
+  height: 6px;
+}
+.clients__container::-webkit-scrollbar-track {
+  background: rgba(54, 79, 114, 0.2);
+  border-radius: 10px;
+}
+.clients__container::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 10px;
 }
 
 .clients__skeleton {
+  /* Фиксируем размеры круга */
+  flex: 0 0 180px;
+  width: 180px;
   height: 180px;
-  width: 100%;
+
+  /* Белый фон и форма круга */
+  background: #ffffff;
+  border-radius: 50%;
+  border: none;
+
+  /* Центрируем логотип внутри круга без обрезки */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   object-fit: contain;
-  padding: 30px;
-  background: rgba(54, 79, 114, 0.3);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  filter: grayscale(100%) brightness(0.8);
+
+  /* УБИРАЕМ затемнение полностью */
+  filter: none;
+  opacity: 1;
+
   transition: all var(--transition-base);
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.clients__skeleton img {
+  max-width: 50%;
+  max-height: 50%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 0%;
 }
 
 .clients__skeleton:hover {
-  filter: grayscale(0%) brightness(1);
-  border-color: var(--color-accent);
-  transform: translateY(-5px);
-  background: rgba(54, 79, 114, 0.5);
+  /* При наведении можно добавить легкую тень или масштаб */
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
 }
 
 /* ======================
@@ -398,7 +500,7 @@ ul {
   }
 
   .clients__container {
-    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .logo__text__footer {
@@ -908,5 +1010,62 @@ body.menu-open {
   .mobile-menu__link {
     font-size: 16px;
     padding: 15px 20px;
+  }
+}
+
+/* ======================
+   КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ
+====================== */
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-left: 40px;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: rotate(15deg) scale(1.05);
+}
+
+.theme-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Анимация иконки при переключении */
+body.light-theme .theme-toggle-btn svg {
+  transform: rotate(360deg);
+  color: #fff;
+  stroke: #fff;
+}
+
+/* В мобильном меню кнопка должна быть видна */
+@media (max-width: 992px) {
+  .theme-toggle-btn {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+
+    top: 10px;
+    right: 20px;
+  }
+
+  .theme-toggle-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }

@@ -36,6 +36,71 @@
 }
 
 /* ======================
+   СВЕТЛАЯ ТЕМА (LIGHT THEME)
+   На основе предоставленной палитры
+====================== */
+
+body.light-theme {
+  /* Основные фоны */
+  --color-primary: #f6fcff; /* Был #15263B -> Стал очень светлым фоном */
+  --color-secondary: #e5f4fb; /* Был #364F72 -> Светло-голубой для хедера/подложек */
+  --color-light-bg: #deeeff; /* Был #E8F4F8 -> Бледно-голубой для секций */
+
+  /* Тексты */
+  --color-text: #000000; /* Был белый -> Черный */
+  --color-text-muted: #111b25; /* Был полупрозрачный белый -> Темно-серый */
+
+  /* Акценты и границы */
+  --color-accent: #f39b42; /* Чуть более насыщенный оранжевый */
+  --color-border: #324a68; /* Серо-синий для границ вместо прозрачного оранжевого */
+
+  /* Тени нужно сделать темнее, так как фон светлый */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .header {
+  color: white;
+}
+
+body.light-theme .carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #364f72;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+body.light-theme .carousel-dot.active {
+  background: #f4a261;
+  transform: scale(1.2);
+}
+
+/* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
+
+body.light-theme .footer {
+  background: #0f1c2e;
+  border-top-color: #324a68;
+}
+body.light-theme .about__us__title,
+body.light-theme .clients__title,
+body.light-theme .contacts__title {
+  color: #f39b42;
+}
+body.light-theme .about__us__menu__item,
+body.light-theme .clients__menu__item,
+body.light-theme .contacts__menu__item,
+body.light-theme .text__npp,
+body.light-theme .text__geos {
+  color: #fff;
+}
+
+/* ======================
    ПОДКЛЮЧЕНИЕ ШРИФТА BOOKMAN OLD STYLE
 ====================== */
 
@@ -208,6 +273,7 @@ ul {
   font-size: 36px;
   font-weight: 400;
   margin-bottom: 25px;
+  color: var(--color-accent);
 }
 
 .about__projects__block {
@@ -269,9 +335,55 @@ ul {
   transform: scale(1.05);
 }
 
-.project-card__year {
+.project-card__name {
   position: absolute;
   top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background: rgba(21, 38, 59, 0.6);
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.project-card__year {
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background: rgba(21, 38, 59, 0.6);
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.hvost__project-card__name {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background: rgba(21, 38, 59, 0.6);
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.hvost__project-card__year {
+  position: absolute;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 36px;
@@ -1134,5 +1246,62 @@ body.menu-open {
   .mobile-menu__link {
     font-size: 16px;
     padding: 15px 20px;
+  }
+}
+
+/* ======================
+   КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ
+====================== */
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-left: 40px;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: rotate(15deg) scale(1.05);
+}
+
+.theme-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Анимация иконки при переключении */
+body.light-theme .theme-toggle-btn svg {
+  transform: rotate(360deg);
+  color: #fff;
+  stroke: #fff;
+}
+
+/* В мобильном меню кнопка должна быть видна */
+@media (max-width: 992px) {
+  .theme-toggle-btn {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+
+    top: 10px;
+    right: 20px;
+  }
+
+  .theme-toggle-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }
