@@ -85,6 +85,10 @@ body.light-theme .contact-info-row__value {
   color: var(--color-text);
 }
 
+body.light-theme .burger-line {
+  background: white;
+}
+
 /* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
 
 body.light-theme .footer {

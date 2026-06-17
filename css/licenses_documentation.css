@@ -61,6 +61,10 @@ body.light-theme {
   --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+body.light-theme .burger-line {
+  background: white;
+}
+
 /* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
 
 body.light-theme .footer {

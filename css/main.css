@@ -146,6 +146,14 @@ body.light-theme .work-card__number {
   color: rgba(17, 27, 37, 0.1); /* Цифры делаем темными полупрозрачными */
 }
 
+body.light-theme .burger-line {
+  background: white;
+}
+
+body.light-theme .header {
+  background-image: url("../images/background-image-light.png");
+}
+
 /* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
 
 body.light-theme .footer {
@@ -163,11 +171,6 @@ body.light-theme .contacts__menu__item,
 body.light-theme .text__npp,
 body.light-theme .text__geos {
   color: #fff;
-}
-
-/* 6. Бургер меню (линии должны быть темными на светлом фоне) */
-body.light-theme .burger-line {
-  background: #111b25;
 }
 
 /* ======================
@@ -1091,31 +1094,22 @@ ul {
 .card__help__btn {
   width: 85%;
   border-radius: var(--radius-sm);
-  background: linear-gradient(
-    135deg,
-    var(--color-accent) 0%,
-    var(--color-accent-dark) 100%
-  );
+  background: var(--color-accent);
   border: none;
-  color: white;
+  color: black;
   padding: 14px 20px;
   font-size: var(--font-sm);
   font-weight: 500;
   font-family: inherit;
   margin-top: auto;
+  margin-right: auto;
   cursor: pointer;
   transition: all var(--transition-base);
   box-shadow: 0 4px 12px rgba(244, 162, 97, 0.2);
 }
 
 .card__help__btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(244, 162, 97, 0.4);
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-dark) 0%,
-    var(--color-accent) 100%
-  );
+  background: var(--color-accent);
 }
 
 /* ======================

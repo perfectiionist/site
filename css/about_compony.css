@@ -77,6 +77,10 @@ body.light-theme .about__info__card svg {
   color: #000000 !important;
 }
 
+body.light-theme .burger-line {
+  background: white;
+}
+
 /* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
 
 body.light-theme .footer {

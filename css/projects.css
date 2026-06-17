@@ -81,6 +81,10 @@ body.light-theme .carousel-dot.active {
   transform: scale(1.2);
 }
 
+body.light-theme .burger-line {
+  background: white;
+}
+
 /* 5. Футер (обычно темный, но если хотим светлый футер: раскомментируйте ниже) */
 
 body.light-theme .footer {
@@ -128,8 +132,12 @@ body.light-theme .text__geos {
   font-display: swap;
 }
 
-html {
+html,
+body {
   box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 *,
@@ -144,6 +152,20 @@ body {
   line-height: 1;
   background-color: var(--color-primary);
   color: var(--color-text);
+
+  /* Добавленные свойства для прижатия футера */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Минимальная высота - весь экран */
+}
+
+header,
+footer {
+  flex-shrink: 0;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 a {
@@ -287,7 +309,7 @@ ul {
   gap: 20px;
   margin-bottom: 40px;
   max-width: 100%; /* 👈 не даём выйти за родителя */
-  overflow-x: hidden; /* 👈 страховка от горизонтального скролла */
+  overflow-x: visible; /* 👈 страховка от горизонтального скролла */
 }
 
 .projects-carousel {
@@ -363,6 +385,55 @@ ul {
   background: rgba(21, 38, 59, 0.6);
   padding: 5px 20px;
   border-radius: 5px;
+}
+
+.project-card__year-294 {
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background: rgba(21, 38, 59, 0.6);
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.project-card__name_niznekamsk {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background: rgba(21, 38, 59, 0.6);
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* 1. Базовые стили для Нижнекамской ГЭС (копируем основные свойства от обычного года) */
+.project-card__year_niznekams {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background: rgba(21, 38, 59, 0.6);
+  padding: 5px 20px;
+  border-radius: 5px;
+
+  /* Изначальная позиция для десктопа */
+  top: 65px;
 }
 
 .hvost__project-card__name {
@@ -581,6 +652,10 @@ ul {
   .project-card__text {
     font-size: 18px;
   }
+
+  .project-card__year_niznekams {
+    top: 100px;
+  }
 }
 
 /* ======================
@@ -621,7 +696,23 @@ ul {
     height: 380px;
   }
 
+  .project-card__name {
+    font-size: 24px;
+  }
+
   .project-card__year {
+    font-size: 24px;
+  }
+
+  .hvost__project-card__name {
+    font-size: 24px;
+  }
+
+  .hvost__project-card__year {
+    font-size: 24px;
+  }
+
+  .project-card__year-294 {
     font-size: 24px;
   }
 
@@ -678,10 +769,38 @@ ul {
     height: 300px;
   }
 
+  .project-card__year_niznekams {
+    top: 50px;
+    font-size: 20px;
+  }
+
+  .project-card__name_niznekamsk {
+    font-size: 20px;
+  }
+
+  .hvost__project-card__name {
+    font-size: 20px;
+  }
+
+  .hvost__project-card__year {
+    font-size: 20px;
+    top: 50px;
+  }
+
+  .project-card__name {
+    font-size: 20px;
+  }
+
   .project-card__year {
-    top: 10px;
     font-size: 20px;
     padding: 4px 12px;
+    top: 50px;
+  }
+
+  .project-card__year-294 {
+    font-size: 20px;
+    padding: 4px 12px;
+    top: 50px;
   }
 
   .project-card__overlay {
@@ -756,6 +875,10 @@ ul {
     font-size: 24px;
   }
 
+  .project-card__text {
+    display: none;
+  }
+
   .projects-carousel {
     height: 240px;
   }
@@ -764,12 +887,38 @@ ul {
     height: 240px;
   }
 
-  .project-card__year {
-    font-size: 16px;
+  .project-card__year_niznekams {
+    top: 58px;
+    font-size: 12px;
   }
 
-  .project-card__text {
-    font-size: 13px;
+  .project-card__name_niznekamsk {
+    font-size: 14px;
+  }
+
+  .project-card__name {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .hvost__project-card__name {
+    font-size: 14px;
+  }
+
+  .hvost__project-card__year {
+    font-size: 12px;
+    top: 55px;
+  }
+
+  .project-card__year-294 {
+    top: 50px;
+    font-size: 12px;
+    top: 44px;
+  }
+
+  .project-card__year {
+    font-size: 12px;
+    top: 58px;
   }
 
   .carousel-arrow {
@@ -779,6 +928,17 @@ ul {
 
   .footer {
     padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hvost__project-card__year {
+    font-size: 12px;
+    top: 58px;
+  }
+
+  .project-card__year-294 {
+    top: 58px;
   }
 }
 
