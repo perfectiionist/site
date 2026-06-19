@@ -454,7 +454,7 @@ ul {
 
 .hvost__project-card__year {
   position: absolute;
-  top: 100px;
+  top: 65px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 36px;
@@ -646,7 +646,23 @@ ul {
   }
 
   .project-card__year {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .project-card__year-294 {
+    font-size: 24px;
+  }
+
+  .project-card__year__bagaev {
+    top: 102px;
+  }
+
+  .project-card__year_niznekams {
+    font-size: 24px;
+  }
+
+  .project-card__name {
+    text-align: center;
   }
 
   .project-card__text {
@@ -655,6 +671,11 @@ ul {
 
   .project-card__year_niznekams {
     top: 100px;
+  }
+
+  .hvost__project-card__year {
+    font-size: 28px;
+    top: 102px;
   }
 }
 
