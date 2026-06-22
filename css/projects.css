@@ -821,7 +821,7 @@ ul {
   .project-card__year-294 {
     font-size: 20px;
     padding: 4px 12px;
-    top: 50px;
+    top: 44px;
   }
 
   .project-card__overlay {
@@ -928,13 +928,11 @@ ul {
 
   .hvost__project-card__year {
     font-size: 12px;
-    top: 55px;
+    top: 57px;
   }
 
   .project-card__year-294 {
-    top: 50px;
     font-size: 12px;
-    top: 44px;
   }
 
   .project-card__year {
@@ -949,17 +947,6 @@ ul {
 
   .footer {
     padding: 40px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hvost__project-card__year {
-    font-size: 12px;
-    top: 58px;
-  }
-
-  .project-card__year-294 {
-    top: 58px;
   }
 }
 
