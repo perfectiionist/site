@@ -262,37 +262,34 @@
             <img src="./images/main-image.jpg" alt="" class="main__image" />
           </picture>
 
+          <div class="block__photo">
+            <img src="./images/about-photo-1.jpg" alt="" class="about__photo" />
+            <img src="./images/about-photo-2.jpg" alt="" class="about__photo" />
+            <img src="./images/about-photo-3.jpg" alt="" class="about__photo" />
+            <img src="./images/about-photo-4.jpg" alt="" class="about__photo" />
+          </div>
+
           <h2 class="compony__geography__title">Географическое присутствие</h2>
           <div class="map__wrapper">
             <div id="map">
+              <!-- Информационная панель -->
               <div class="info__panel" id="infoPanel">
                 Всего организаций: <span id="totalCount">0</span>
               </div>
+
+              <!-- ✅ Блок с логотипом и условиями использования Яндекс.Карт -->
+              <div class="yandex-attribution">
+                <a
+                  href="https://yandex.ru/legal/maps_termsofuse/ru/?lang=ru"
+                  target="_blank"
+                  class="yandex-terms"
+                >
+                  © Яндекс Условия использования
+                </a>
+              </div>
             </div>
           </div>
-          <h2 class="compony__licenses__title">Лицензии</h2>
-          <div class="container__licenses">
-            <div class="document__card">
-              <img src="images/header-bing.svg" alt="" class="document__icon" />
-              <p class="document__title">Выписка из реестра СРО</p>
-            </div>
 
-            <div class="document__card">
-              <img src="images/header-bing.svg" alt="" class="document__icon" />
-              <p class="document__title">
-                Выписка из реестра СРО (инженерные изыскания)
-              </p>
-            </div>
-
-            <div class="document__card">
-              <img src="images/header-bing.svg" alt="" class="document__icon" />
-              <p class="document__title">
-                Выписка из реестра СРО (проектная документация)
-              </p>
-            </div>
-
-            <button class="container__licenses__btn">Подробнее</button>
-          </div>
           <h2 class="compony__clients__title">Наши заказчики</h2>
           <div class="clients__container">
             <div class="clients__skeleton">
@@ -322,6 +319,22 @@
 
             <div class="clients__skeleton">
               <img src="./images/eks.jpg" alt="" />
+            </div>
+
+            <div class="clients__skeleton">
+              <img src="./images/ministerstvo.svg.png" alt="" />
+            </div>
+
+            <div class="clients__skeleton">
+              <img src="./images/volgo-don.jpg" alt="" />
+            </div>
+
+            <div class="clients__skeleton">
+              <img src="./images/polus.jpg" alt="" />
+            </div>
+
+            <div class="clients__skeleton">
+              <img src="./images/kanal-moscow.png" alt="" />
             </div>
           </div>
           <h2 class="compony__help__title">Наши возможности</h2>
@@ -396,12 +409,7 @@
               <p class="card__compony__help__text">
                 Мы возьмём это на себя! Разработаем декларацию и критерии
                 безопасности по Постановлению № 1892, рассчитаем потенциальный
-                вред по методике Ростехнадзора (№ 516), подготовим технические
-                паспорта и программы мониторинга. Всё в строгом соответствии с
-                законодательством.Выполняем эти работы как для проектируемых
-                гидротехнических сооружений, так и для уже эксплуатируемых
-                объектов поможем привести документацию в порядок на любом этапе
-                жизненного цикла ГТС
+                вред по методике Ростехнадзора (№ 516)
               </p>
               <button class="card__help__btn">
                 Разработка деклараций безопасности
@@ -419,17 +427,52 @@
               <button class="card__help__btn">Планшет обходчика</button>
             </div>
             <div class="card__compony__help">
-              <p class="card__compony__help__title">Новая услуга</p>
-              <p class="card__compony__help__text">текст</p>
-              <button class="card__help__btn">Кнопка</button>
+              <p class="card__compony__help__title">
+                Испытываете сложности с эксплуатационной документацией
+                гидротехнических сооружений (ГТС) - отсутствует либо требует
+                актуализации?
+              </p>
+              <p class="card__compony__help__text">
+                Мы поможем привести её в порядок на любом этапе жизненного цикла
+                объекта: как для проектируемых, так и для уже эксплуатируемых
+                ГТС. Подготовим технические паспорта, программы мониторинга,
+                правила и инструкции по эксплуатации - в полном соответствии с
+                действующим законодательством
+              </p>
+              <button class="card__help__btn">
+                Эксплуатационная документация
+              </button>
             </div>
             <div class="card__compony__help">
-              <p class="card__compony__help__title">Новая услуга</p>
-              <p class="card__compony__help__text">текст</p>
-              <button class="card__help__btn">Кнопка</button>
+              <p class="card__compony__help__title">
+                Столкнулись с задачей, требующей глубокого научного анализа?
+              </p>
+              <p class="card__compony__help__text">
+                Наша компания выполнит необходимые научно‑исследовательские
+                работы (НИР), опираясь на возможности собственного
+                аналитического центра. Мы поможем:
+              </p>
+              <ul class="ul__card__help">
+                <li class="card__compony__help__text">
+                  сформулировать исследовательскую гипотезу;
+                </li>
+                <li class="card__compony__help__text">
+                  собрать и проанализировать данные;
+                </li>
+                <li class="card__compony__help__text">
+                  смоделировать процессы и спрогнозировать результаты;
+                </li>
+              </ul>
+              <p class="card__compony__help__text">
+                Доведём проект от идеи до практического внедрения - с
+                соблюдением сроков и стандартов качества
+              </p>
+              <button class="card__help__btn">
+                Научно‑исследовательские работы (НИР)
+              </button>
             </div>
           </div>
-          <h2 class="compony__works__title">Этапы работы</h2>
+          <h2 class="compony__works__title" id="works__block">Этапы работы</h2>
           <div class="container__compony__works">
             <div class="work-card">
               <div class="work-card__column work-card__column--customer">
@@ -492,6 +535,12 @@
           <div class="container__compony__projects">
             <h2 class="compony__projects__title">Реализованные проекты</h2>
             <a href="projects.html">
+              <button class="compony__projects__about__btn">Подробнее</button>
+            </a>
+          </div>
+          <div class="container__compony__projects">
+            <h2 class="compony__projects__title">Лицензии</h2>
+            <a href="licenses_documentation.html">
               <button class="compony__projects__about__btn">Подробнее</button>
             </a>
           </div>
@@ -606,13 +655,15 @@
         <p class="about__us__title">О нас</p>
         <ul class="about__us__menu">
           <li class="about__us__menu__item">
-            <a href="#" class="menu__link__item">История</a>
+            <a href="about_compony.html" class="menu__link__item">История</a>
           </li>
           <li class="about__us__menu__item">
-            <a href="#" class="menu__link__item">Документация</a>
+            <a href="licenses_documentation.html" class="menu__link__item"
+              >Лицензии</a
+            >
           </li>
           <li class="about__us__menu__item">
-            <a href="#" class="menu__link__item">Партнеры</a>
+            <a href="customers.html" class="menu__link__item">Заказчики</a>
           </li>
         </ul>
       </div>
@@ -621,13 +672,13 @@
         <p class="clients__title">Клиентам</p>
         <ul class="clients__menu">
           <li class="clients__menu__item">
-            <a href="#" class="menu__link__item">Услуги</a>
+            <a href="services.html" class="menu__link__item">Услуги</a>
           </li>
           <li class="clients__menu__item">
-            <a href="#" class="menu__link__item">Проекты</a>
+            <a href="projects.html" class="menu__link__item">Проекты</a>
           </li>
           <li class="clients__menu__item">
-            <a href="#" class="menu__link__item">Процесс</a>
+            <a href="#works__block" class="menu__link__item">Процесс</a>
           </li>
         </ul>
       </div>

@@ -239,7 +239,7 @@ ul {
 }
 
 .menu__link {
-  font-size: var(--font-lg);
+  font-size: var(--font-md);
   transition: var(--transition-base);
   white-space: nowrap;
   position: relative;

@@ -263,7 +263,7 @@ ul {
 }
 
 .menu__link {
-  font-size: var(--font-lg);
+  font-size: var(--font-md);
   transition: var(--transition-base);
   white-space: nowrap;
   position: relative;
@@ -357,6 +357,29 @@ ul {
   transform: scale(1.05);
 }
 
+.dual-image-wrapper {
+  display: flex;
+  padding: 0;
+}
+
+.dual-image-item {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.dual-image-item .project-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.project-card:hover .dual-image-item .project-card__image {
+  transform: scale(1.05);
+}
+
 .project-card__name {
   position: absolute;
   top: 20px;
@@ -372,6 +395,10 @@ ul {
   border-radius: 5px;
 }
 
+.nasos__name {
+  text-align: center;
+}
+
 .project-card__year {
   position: absolute;
   top: 65px;
@@ -385,6 +412,14 @@ ul {
   background: rgba(21, 38, 59, 0.6);
   padding: 5px 20px;
   border-radius: 5px;
+}
+
+.nasos__year {
+  top: 138px;
+}
+
+.bagaev__2026__year {
+  top: 66px;
 }
 
 .project-card__year-294 {
@@ -665,6 +700,14 @@ ul {
     text-align: center;
   }
 
+  .nasos__year {
+    top: 174px;
+  }
+
+  .bagaev__2026__year {
+    top: 102px;
+  }
+
   .project-card__text {
     font-size: 18px;
   }
@@ -812,6 +855,10 @@ ul {
     font-size: 20px;
   }
 
+  .project-card__year.nasos__year {
+    top: 90px;
+  }
+
   .project-card__year {
     font-size: 20px;
     padding: 4px 12px;
@@ -821,7 +868,7 @@ ul {
   .project-card__year-294 {
     font-size: 20px;
     padding: 4px 12px;
-    top: 44px;
+    top: 50px;
   }
 
   .project-card__overlay {
@@ -929,6 +976,14 @@ ul {
   .hvost__project-card__year {
     font-size: 12px;
     top: 57px;
+  }
+
+  .project-card__name.nasos__name {
+    width: 250px;
+  }
+
+  .project-card__year.nasos__year {
+    top: 72px;
   }
 
   .project-card__year-294 {
@@ -1471,5 +1526,20 @@ body.light-theme .theme-toggle-btn svg {
   .theme-toggle-btn svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .project-card__name.nasos__name {
+    width: 160px;
+    font-size: 12px;
+  }
+
+  .project-card__year.nasos__year {
+    top: 78px;
+  }
+
+  .project-card__year-294 {
+    top: 58px;
   }
 }

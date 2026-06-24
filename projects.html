@@ -138,7 +138,7 @@
           </button>
 
           <div class="projects-carousel">
-            <div class="project-card">
+            <div class="project-card active">
               <div class="project-card__image-wrapper">
                 <img
                   src="./images/krasnoyarsk.jpg"
@@ -177,7 +177,7 @@
               </div>
             </div>
 
-            <div class="project-card active">
+            <div class="project-card">
               <div class="project-card__image-wrapper">
                 <img
                   src="./images/№294.jpg"
@@ -239,6 +239,39 @@
             </div>
 
             <div class="project-card">
+              <div class="project-card__image-wrapper dual-image-wrapper">
+                <div class="dual-image-item">
+                  <img
+                    src="./images/nasos.jpg"
+                    alt="Загорская ГАЭС вид 1"
+                    class="project-card__image"
+                  />
+                </div>
+
+                <div class="dual-image-item">
+                  <img
+                    src="./images/nasos2.jpg"
+                    alt="Загорская ГАЭС вид 2"
+                    class="project-card__image"
+                  />
+                </div>
+
+                <span class="project-card__name nasos__name"
+                  >Насосные станции №185, №186 "Канал имени Москвы"</span
+                >
+                <span class="project-card__year nasos__year">2025</span>
+
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    Выполняем инженерно – геологические изыскания: Реконструкция
+                    и обследование железобетонных конструкций насосных станций
+                    №185, №186
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
               <div class="project-card__image-wrapper">
                 <img
                   src="./images/fabric.jpg"
@@ -268,6 +301,38 @@
                 <div class="project-card__overlay">
                   <p class="project-card__text">
                     Поверка (калибровка) средств измерений АСДК
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__image-wrapper dual-image-wrapper">
+                <div class="dual-image-item">
+                  <img
+                    src="./images/bagaev2026.jpg"
+                    alt="Багаевский гидроузел 2026 вид 1"
+                    class="project-card__image"
+                  />
+                </div>
+
+                <div class="dual-image-item">
+                  <img
+                    src="./images/bagaev2026-2.jpg"
+                    alt="Багаевский гидроузел 2026 вид 2"
+                    class="project-card__image"
+                  />
+                </div>
+
+                <span class="project-card__name bagaev__2026__name"
+                  >Багаевский гидроузел</span
+                >
+                <span class="project-card__year bagaev__2026__year">2026</span>
+
+                <div class="project-card__overlay">
+                  <p class="project-card__text">
+                    Устанавливаем пьезометрические скважины на Багаевском
+                    гидроузле
                   </p>
                 </div>
               </div>
@@ -309,13 +374,15 @@
         <p class="about__us__title">О нас</p>
         <ul class="about__us__menu">
           <li class="about__us__menu__item">
-            <a href="#" class="menu__link__item">История</a>
+            <a href="about_compony.html" class="menu__link__item">История</a>
           </li>
           <li class="about__us__menu__item">
-            <a href="#" class="menu__link__item">Документация</a>
+            <a href="licenses_documentation.html" class="menu__link__item"
+              >Лицензии</a
+            >
           </li>
           <li class="about__us__menu__item">
-            <a href="#" class="menu__link__item">Партнеры</a>
+            <a href="customers.html" class="menu__link__item">Партнеры</a>
           </li>
         </ul>
       </div>
@@ -324,13 +391,10 @@
         <p class="clients__title">Клиентам</p>
         <ul class="clients__menu">
           <li class="clients__menu__item">
-            <a href="#" class="menu__link__item">Услуги</a>
+            <a href="services.html" class="menu__link__item">Услуги</a>
           </li>
           <li class="clients__menu__item">
-            <a href="#" class="menu__link__item">Проекты</a>
-          </li>
-          <li class="clients__menu__item">
-            <a href="#" class="menu__link__item">Процесс</a>
+            <a href="projects.html" class="menu__link__item">Проекты</a>
           </li>
         </ul>
       </div>
@@ -438,7 +502,7 @@
         let currentIndex = 0;
         const totalCards = cards.length;
         let autoPlayInterval;
-        // const autoPlayDelay = 5000; // 5 секунд
+        const autoPlayDelay = 5000; // 5 секунд
 
         // Создаем индикаторы (точки)
         cards.forEach((_, index) => {

@@ -270,7 +270,7 @@ main {
 }
 
 .menu__link {
-  font-size: var(--font-lg);
+  font-size: var(--font-md);
   transition: var(--transition-base);
   white-space: nowrap;
   position: relative;
@@ -386,6 +386,39 @@ main {
   height: 80vh;
   width: 80%;
   border-radius: 20px;
+}
+
+/* Блок атрибуции в правом нижнем углу */
+.yandex-attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 11px;
+
+  z-index: 1000; /* Поверх карты */
+  pointer-events: none; /* Чтобы не мешать взаимодействию с картой */
+}
+
+.yandex-attribution > * {
+  pointer-events: auto; /* Но ссылки должны быть кликабельны */
+}
+
+.yandex-attribution .yandex-terms {
+  color: black;
+  text-decoration: none;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.yandex-attribution .yandex-terms:hover {
+  text-decoration: underline;
 }
 
 /* Скрываем стандартную атрибуцию Leaflet */

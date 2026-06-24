@@ -81,11 +81,6 @@ body.light-theme .about__info__card svg {
   color: #000000 !important;
 }
 
-/* 2. Карточки лицензий (они уже белые, но текст может сливаться) */
-body.light-theme .document__title {
-  color: #111b25;
-}
-
 body.light-theme .card__compony__activity {
   background: #364f72 !important;
 }
@@ -95,20 +90,6 @@ body.light-theme .card__compony__activity__text {
 }
 
 body.light-theme .clients__skeleton {
-  border: 1px solid black;
-}
-
-body.light-theme .container__licenses__btn {
-  background: linear-gradient(
-    135deg,
-    var(--color-accent) 0%,
-    var(--color-accent-dark) 100%
-  );
-  border: none;
-  color: white;
-}
-
-body.light-theme .document__card {
   border: 1px solid black;
 }
 
@@ -244,16 +225,23 @@ ul {
 .header {
   min-height: auto;
   color: var(--color-text);
+
+  /* Изменяем позиционирование фона */
   background-image: url("../images/background.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: var(--color-primary);
+  background-position: center 120%; /* Центрируем и прижимаем к низу, если плотина стоит на "земле" */
+  background-size: contain; /* КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: картинка поместится целиком */
+  background-color: var(
+    --color-primary
+  ); /* Цвет фона заполнит пустоты, где нет картинки */
+
   padding-bottom: 170px;
   margin-bottom: 30px;
   position: relative;
-}
 
+  /* Добавляем минимальную высоту, чтобы на больших экранах фон не был слишком мелким */
+  min-height: 600px;
+}
 /* .header::before {
   content: "";
   position: absolute;
@@ -301,13 +289,40 @@ ul {
   justify-self: start;
   transition: transform var(--transition-base);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Центрирование по вертикали внутри блока */
+
+  /* Фиксируем размеры для корректной работы ::after */
+  width: 250px;
+  height: 100px;
+
+  position: relative;
+  z-index: 2;
+
+  /* --- НАСТРОЙКИ ПОЗИЦИИ ЛОГОТИПА --- */
+  /* top: вниз, left: влево (можно использовать отрицательные значения) */
+  padding-top: 55px; /* Сдвигает контент вниз. Было 0, стало 35px */
+  padding-left: 0px; /* Если нужно еще левее, ставьте отрицательное значение, например -10px */
+  /* ---------------------------------- */
+}
+
+/* 2. Создаем фон, который уходит вниз */
+.logo::after {
+  content: "";
+  position: absolute;
+
+  /* Растягиваем фон на всю высоту шапки + добавляем "хвост" вниз */
+  top: 0;
+  bottom: -60px; /* Насколько глубоко фон уходит вниз */
+  left: -15px;
+  right: 0;
+
+  background-color: #364f72; /* Цвет должен совпадать с .header__top */
+  z-index: -1; /* Помещаем ПОД картинку и текст логотипа */
 }
 
 .logo img {
   display: block;
-  width: 70px;
+  width: 100px; /* Было 70px, ставим 90px или 100px */
 }
 
 .logo__text {
@@ -318,10 +333,12 @@ ul {
 
 .text__npp {
   margin-bottom: 10px;
+  font-size: 24px; /* Было 16px */
+  line-height: 1;
 }
-
 .text__geos {
-  font-size: 26px;
+  font-size: 38px; /* Было 26px */
+  line-height: 1;
 }
 
 /* ======================
@@ -339,7 +356,7 @@ ul {
 }
 
 .menu__link {
-  font-size: var(--font-lg);
+  font-size: var(--font-md);
   transition: var(--transition-base);
   white-space: nowrap;
   position: relative;
@@ -615,6 +632,40 @@ ul {
   width: 80%;
   border-radius: 20px;
 }
+
+/* Блок атрибуции в правом нижнем углу */
+.yandex-attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 11px;
+
+  z-index: 1000; /* Поверх карты */
+  pointer-events: none; /* Чтобы не мешать взаимодействию с картой */
+}
+
+.yandex-attribution > * {
+  pointer-events: auto; /* Но ссылки должны быть кликабельны */
+}
+
+.yandex-attribution .yandex-terms {
+  color: black;
+  text-decoration: none;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.yandex-attribution .yandex-terms:hover {
+  text-decoration: underline;
+}
+
 /* Скрываем стандартную атрибуцию Leaflet */
 .leaflet-control-attribution {
   display: none !important;
@@ -862,88 +913,6 @@ ul {
 }
 
 /* ======================
-   ЛИЦЕНЗИИ
-====================== */
-
-.container__licenses {
-  display: grid; /* ← Изменить с flex на grid */
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* ← Автоматическое распределение */
-  gap: 45px;
-  width: 100%;
-  margin-bottom: 60px;
-  align-items: stretch; /* ← Растянуть все карточки на одинаковую высоту */
-}
-
-.document__card {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  min-height: 320px;
-  overflow: hidden;
-  width: 100%;
-  height: 100%; /* ← Занять всю доступную высоту */
-}
-.document__card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.document__icon {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 0;
-  object-fit: cover;
-}
-
-.document__title {
-  font-size: 18px;
-  color: #15263b;
-  line-height: 1.4;
-  margin: 0;
-  font-weight: 500;
-  padding: 20px;
-  text-align: center;
-  flex: 1; /* ← Растянуть заголовок на оставшееся место */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.container__licenses__btn {
-  align-self: flex-end;
-  height: 60px;
-  width: 200px;
-  margin-left: auto;
-  background: transparent;
-  border: 1px solid orange;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 20px;
-  transition: all 0.2s ease-in-out;
-  font-family: inherit;
-}
-
-.container__licenses__btn:hover {
-  background: orange;
-  transition: all 0.2s ease-in-out;
-}
-
-/* ======================
-   КЛИЕНТЫ
-====================== */
-
-/* ======================
    КЛИЕНТЫ (Слайдер)
 ====================== */
 
@@ -1093,7 +1062,7 @@ ul {
 
 .card__help__btn {
   width: 85%;
-  border-radius: var(--radius-sm);
+  border-radius: 50px;
   background: var(--color-accent);
   border: none;
   color: black;
@@ -1110,6 +1079,33 @@ ul {
 
 .card__help__btn:hover {
   background: var(--color-accent);
+}
+
+.ul__card__help {
+  display: block;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.ul__card__help .card__compony__help__text {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.ul__card__help .card__compony__help__text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
 }
 
 /* ======================
@@ -1385,6 +1381,26 @@ ul {
   transform: translateY(0);
 }
 
+.block__photo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 100px;
+  gap: 20px;
+}
+
+.about__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 318 / 425; /* Сохраняем пропорции */
+  object-fit: cover; /* Чтобы фото красиво обрезались */
+  border-radius: 8px; /* Опционально */
+  transition: transform var(--transition-slow);
+}
+
+.about__photo:hover {
+  transform: scale(1.01);
+}
+
 /* ======================
    FOOTER
 ====================== */
@@ -1546,11 +1562,6 @@ ul {
     gap: 15px;
   }
 
-  .container__licenses {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   .licenses__card {
     width: calc(50% - 25px);
   }
@@ -1667,6 +1678,11 @@ ul {
     font-size: 36px;
   }
 
+  .block__photo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
   /* Footer */
 
   .footer {
@@ -1734,22 +1750,12 @@ ul {
     gap: 20px;
   }
 
-  .container__licenses {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .logo img {
     width: 70px;
   }
 
   .licenses__card {
     width: 100%;
-  }
-
-  .container__licenses__btn {
-    width: 100%;
-    margin-left: 0;
   }
 
   .card__compony__activity {
@@ -1888,6 +1894,11 @@ ul {
 
   #map {
     height: 45vh;
+  }
+
+  .block__photo {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .footer {
