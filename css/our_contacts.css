@@ -392,7 +392,7 @@ main {
 .yandex-attribution {
   position: absolute;
   bottom: 10px;
-  right: 120px;
+  right: 80px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -401,6 +401,17 @@ main {
   border-radius: 4px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   font-size: 11px;
+
+  z-index: 1000; /* Поверх карты */
+  pointer-events: none; /* Чтобы не мешать взаимодействию с картой */
+}
+
+.logo-attribution {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  display: flex;
+  align-items: center;
 
   z-index: 1000; /* Поверх карты */
   pointer-events: none; /* Чтобы не мешать взаимодействию с картой */
@@ -715,6 +726,14 @@ main {
     margin-bottom: 30px;
   }
 
+  .logo-attribution {
+    bottom: 30px;
+  }
+
+  .yandex-attribution {
+    right: 20px;
+  }
+
   /* Footer */
   .footer {
     grid-template-columns: 1fr;
@@ -828,6 +847,32 @@ main {
   #map {
     height: 45vh;
     border-radius: 8px;
+  }
+
+  .logo-attribution {
+    bottom: 20px;
+    right: 0px;
+  }
+
+  .yandex-attribution {
+    bottom: 15px; /* Поднимаем блок выше над краем карты */
+    right: 10px;
+
+    /* Выстраиваем элементы в колонку */
+    flex-direction: column;
+    align-items: flex-end; /* Прижимаем содержимое к правому краю */
+    gap: 2px; /* Отступ между логотипом и текстом */
+
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px 6px;
+    border-radius: 4px;
+  }
+
+  /* Уменьшаем шрифт ссылки для компактности */
+  .yandex-attribution .yandex-terms {
+    font-size: 8px;
+    text-align: right;
+    line-height: 1;
   }
 }
 

@@ -47,14 +47,14 @@ resetControl.onAdd = function () {
 resetControl.addTo(map);
 
 // Логотип Яндекса
-const yandexLogo = L.control({ position: "bottomright" });
-yandexLogo.onAdd = function () {
-  const div = L.DomUtil.create("div");
-  div.innerHTML =
-    '<a href="https://yandex.ru/maps" target="_blank"><img src="/site/images/yndex_logo_ru.png" alt="Яндекс Карты" style="height: 40px;"></a>';
-  return div;
-};
-yandexLogo.addTo(map);
+// const yandexLogo = L.control({ position: "bottomright" });
+// yandexLogo.onAdd = function () {
+//   const div = L.DomUtil.create("div");
+//   div.innerHTML =
+//     '<a href="https://yandex.ru/maps" target="_blank"><img src="/site/images/yndex_logo_ru.png" alt="Яндекс Карты" style="height: 40px;"></a>';
+//   return div;
+// };
+// yandexLogo.addTo(map);
 
 // Кастомная иконка
 const customIcon = L.icon({
