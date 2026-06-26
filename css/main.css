@@ -223,7 +223,6 @@ ul {
 ====================== */
 
 .header {
-  min-height: auto;
   color: var(--color-text);
 
   background-image: url("../images/background.png");
@@ -246,7 +245,7 @@ ul {
   margin-bottom: 0;
 
   position: relative;
-  min-height: 600px;
+  min-height: 900px;
 }
 /* .header::before {
   content: "";
@@ -429,7 +428,7 @@ ul {
 }
 
 .submit__container {
-  padding-top: 145px;
+  padding-top: 235px;
   display: flex;
   align-items: flex-end;
 }
@@ -484,7 +483,8 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 50px 0;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
+  padding-top: 100px;
 }
 
 .about__info__card {
@@ -1561,6 +1561,9 @@ ul {
 ========================================== */
 
 @media (max-width: 1200px) {
+  .header {
+    height: auto;
+  }
   .header__title {
     font-size: 52px;
   }
@@ -1576,6 +1579,10 @@ ul {
 
   .menu__list {
     gap: 15px;
+  }
+
+  .about__info {
+    margin-top: -100px;
   }
 
   .licenses__card {
@@ -1748,6 +1755,7 @@ ul {
 @media (max-width: 768px) {
   .header {
     background-position: 0% 200px;
+    height: auto;
   }
   .container {
     padding: 0 15px;
@@ -2047,8 +2055,25 @@ ul {
     width: 100%;
   }
 }
+@media (max-width: 425px) {
+  .header {
+    min-height: auto;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    min-height: auto;
+    margin-bottom: 0px;
+  }
+}
 
 @media (max-width: 320px) {
+  .header {
+    min-height: auto;
+    margin-bottom: 20px;
+  }
   .header__title {
     margin-bottom: -50px;
   }
